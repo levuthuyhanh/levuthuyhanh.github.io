@@ -59,9 +59,7 @@ body::before {
   left: 0; 
   width: 100%; 
   
-  /* Độ cao của vùng màu loang. 
-     800px là vừa đủ qua chữ to và ôm lấy một nửa khung ảnh. 
-     Bạn có thể tăng/giảm số này nếu muốn màu kéo dài hơn hoặc ngắn lại */
+  
   height: 800px; 
   
   /* Giữ nguyên hiệu ứng màu loang của bạn */
@@ -231,71 +229,168 @@ article:nth-child(3) { animation-delay: 0.2s; }
 /* =========================================
    4. HERO SECTION (TRANG CHỦ)
 ========================================= */
-#trang-chu {
-  padding: 60px 20px 120px;
+.sean-hero, .in-progress-header {
   text-align: center;
+  padding: 180px 20px 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
-#trang-chu h1 {
-  font-size: 5.5rem;
+.hero-text-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+/* Chữ xanh khổng lồ */
+.giant-heading {
+  font-size: 8rem; /* Kích thước siêu lớn */
+  font-family: 'A', sans-serif;
+  font-weight: 900;
+  color: #0c5140; /* Màu xanh lá đậm chuẩn Sean Halpin */
+  line-height: 0.95;
+  letter-spacing: -4px; /* Ép chữ sát vào nhau */
+  margin: 0;
+}
+
+/* Định vị 2 ngôi sao */
+.sparkle {
+  position: absolute;
+}
+.sparkle.left {
+  top: 80px;
+  left: -80px;
+}
+.sparkle.right {
+  top: -20px;
+  right: -80px;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: #5d7067;
+  font-family: 'BeVietnamPro', sans-serif; /* Dùng font chuẩn cho chữ nhỏ */
+  line-height: 1.6;
+  font-weight: 500;
+}
+/* =========================================
+   CÁC Ô TƯƠNG TÁC (WORK CARDS) - CHUẨN MẪU VUÔNG & CHỮ NHẬT
+========================================= */
+.work-section, .in-progress-section {
+  /* Mở rộng chiếm gần hết màn hình vi tính */
+  max-width: 1540px; 
+  margin: 0 auto;
+  padding: 0 40px 150px;
+}
+
+.in-progress-section {
+  padding-top: 50px;
+}
+
+.in-progress-header {
+  padding: 50px 20px 80px;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); 
+  gap: 60px; 
+}
+
+.work-card {
+  display: block;
+  border-radius: 48px; 
+  height: 450px; 
+  padding: 45px 50px; 
+  position: relative;
+  text-decoration: none;
+  color: #2c2c2c;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* --- TỶ LỆ CÁC Ô ĐÃ ĐƯỢC CHỈNH LẠI (CÔNG THỨC 4 - 8) --- */
+/* Hàng 1 */
+.work-section .work-card:nth-child(1) { grid-column: span 4; } 
+.work-section .work-card:nth-child(2) { grid-column: span 8; }
+/* Hàng 2 (So le lại) */
+.work-section .work-card:nth-child(3) { grid-column: span 8; } 
+.work-section .work-card:nth-child(4) { grid-column: span 4; } 
+
+/* Hàng 3 (In Progress) */
+.in-progress-section .work-card:nth-child(1) { grid-column: span 4; } 
+.in-progress-section .work-card:nth-child(2) { grid-column: span 8; } 
+
+.work-card:hover {
+  transform: scale(0.98); 
+}
+
+/* Nhóm Text bên trong Card */
+.card-header {
+  text-align: right;
+  z-index: 2;
+  position: relative;
+}
+
+.card-header .brand {
+  font-family: 'BeVietnamPro', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.card-header h2 {
+  font-size: 3.5rem; 
+  font-family: 'A', sans-serif;
   font-weight: 900;
   letter-spacing: -1.5px;
-  margin-bottom: 20px;
-  max-width: 800px;
-  line-height: 1.1;
+  margin: 0;
 }
 
-#trang-chu p {
-  font-size: 1.4rem;
-  color: var(--text-light);
-  margin-bottom: 40px;
-  max-width: 600px;
-  font-weight: 600;
+/* Màu nền */
+.card-purple { background-color: #cda2e7; }
+.card-mint { background-color: #a8e4cf; }
+.card-peach { background-color: #f2c7a9; }
+.card-blue { background-color: #b1d8f8; }
+.card-white { background-color: #ffffff; }
+.card-black { background-color: #1a1a1a; }
+
+.card-header.light-text, 
+.card-header.light-text h2 {
+  color: #ffffff;
 }
 
-.hero-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 60px;
+/* =========================================
+   RESPONSIVE (ĐIỆN THOẠI & IPAD)
+========================================= */
+@media (max-width: 992px) {
+  .giant-heading {
+    font-size: 5.5rem;
+  }
+  .sparkle.left { left: -40px; width: 30px; }
+  .sparkle.right { right: -40px; width: 40px; }
+  
+  .work-grid .work-card {
+    grid-column: span 12 !important; 
+  }
+  
+  .work-card {
+    height: 480px; 
+  }
 }
 
-.hero-buttons a {
-  padding: 16px 40px;
-  border-radius: var(--radius-pill);
-  font-weight: 800;
-  font-size: 1.1rem;
-  transition: var(--transition);
-}
-
-.hero-buttons a:nth-child(1) {
-  background-color: var(--accent);
-  color: var(--white);
-}
-
-.hero-buttons a:nth-child(2) {
-  background-color: var(--bg-card);
-  color: var(--text-dark);
-}
-
-.hero-buttons a:hover {
-  transform: translateY(-5px);
-}
-
-.hero-image {
-  background: var(--bg-card);
-  width: 100%;
-  max-width: 1000px;
-  height: 500px;
-  border-radius: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 4px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 30px 60px rgba(55, 83, 74, 0.08);
+@media (max-width: 768px) {
+  .giant-heading {
+    font-size: 4rem;
+    letter-spacing: -2px;
+  }
+  .sean-hero { padding: 120px 20px 60px; }
+  .sparkle { display: none; }
 }
 /* =========================================
    5. TRANG EPIC (ABOUT PAGE - SEAN HALPIN STYLE)
@@ -679,7 +774,7 @@ article:nth-child(3) { animation-delay: 0.2s; }
   .note-item h3 { font-size: 1.8rem; }
 }
 /* =========================================
-   8. FOOTER (CLONE TỪ ẢNH)
+   8. FOOTER 
 ========================================= */
 .site-footer {
   background-color: #ebe7de; /* Màu nền kem be nhạt giống ảnh */
@@ -810,4 +905,93 @@ article:nth-child(3) { animation-delay: 0.2s; }
   .site-footer {
     padding: 60px 20px 40px;
   }
+}
+/* =========================================
+   HIỆU ỨNG CÁC BIỂU TƯỢNG BAY RA (HOVER)
+========================================= */
+.card-floaters {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none; /* Tránh cản trở click chuột */
+  z-index: 10;
+}
+
+/* Cài đặt gốc: Ẩn đi và thu nhỏ về 0 giống y hệt .star */
+.floater {
+  position: absolute;
+  opacity: 0;
+  transform: scale(0) translate(0, 0) rotate(0deg); 
+  /* Dùng chung hiệu ứng nảy (bouncy) giống ngôi sao */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+
+/* Định vị điểm xuất phát cho từng icon nằm ẩn ở giữa thẻ */
+.card-mint .f-doc { top: 35%; left: 40%; }
+.card-mint .f-pen { top: 25%; right: 35%; }
+
+.card-peach .f-squiggle { bottom: 35%; left: 30%; }
+.card-peach .f-swirl { top: 25%; left: 45%; }
+
+.card-blue .f-phone { top: 25%; left: 40%; }
+
+/* --- KHI HOVER: Phóng to (scale 1), dịch chuyển ra tận viền và xoay nghiêng --- */
+
+/* 0. Ô Tím (AI) */
+/* Vị trí gốc (tập trung ở một góc phía trên bên trái) */
+.card-purple .f-star-1 { top: 15%; left: 20%; }
+.card-purple .f-star-2 { top: 10%; left: 10%; }
+.card-purple .f-star-3 { top: 12%; left: 35%; }
+
+/* Khi Hover: Bắn túa ra ngoài mép */
+.card-purple:hover .f-star-1 {
+  opacity: 1;
+  transform: scale(1) translate(-70px, -60px) rotate(15deg);
+  transition-delay: 0.1s;
+}
+.card-purple:hover .f-star-2 {
+  opacity: 0.8;
+  transform: scale(1) translate(-90px, -10px) rotate(-10deg);
+  transition-delay: 0.2s;
+}
+.card-purple:hover .f-star-3 {
+  opacity: 0.9;
+  transform: scale(1) translate(40px, -80px) rotate(25deg);
+  transition-delay: 0.15s;
+}
+
+/* 1. Ô Xanh ngọc (Articles) - Thẻ chữ nhật dài */
+.card-mint:hover .f-doc {
+  opacity: 1;
+  /* Đẩy mạnh sang trái và lên trên để chạm mép viền */
+  transform: scale(1) translate(-280px, -180px) rotate(-15deg);
+  transition-delay: 0.1s; 
+}
+.card-mint:hover .f-pen {
+  opacity: 1;
+  /* Đẩy mạnh sang phải và lên trên */
+  transform: scale(1) translate(280px, -160px) rotate(15deg);
+  transition-delay: 0.2s; 
+}
+
+/* 2. Ô Cam (Plugins) - Thẻ chữ nhật dài */
+.card-peach:hover .f-squiggle {
+  opacity: 1;
+  /* Đẩy xa sang mép trái */
+  transform: scale(1) translate(-350px, 20px) rotate(-10deg);
+  transition-delay: 0.15s;
+}
+.card-peach:hover .f-swirl {
+  opacity: 1;
+  /* Đẩy thẳng lên viền trên */
+  transform: scale(1) translate(20px, -170px) rotate(15deg);
+  transition-delay: 0.1s;
+}
+
+/* 3. Ô Xanh dương (Mobile) - Thẻ hình vuông */
+.card-blue:hover .f-phone {
+  opacity: 1;
+  /* Thẻ vuông nên khoảng cách đẩy ra viền ngắn hơn thẻ dài một chút */
+  transform: scale(1) translate(-140px, -160px) rotate(-20deg);
+  transition-delay: 0.1s;
 }

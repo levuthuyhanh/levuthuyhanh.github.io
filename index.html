@@ -24,17 +24,142 @@
 </header>
 
   <main>
-    <!-- Section: Hero / Banner -->
-    <section id="trang-chu">
-    <h1>Khơi mở tiềm năng,<br>Thỏa sức đam mê</h1>
-    <p>Trung tâm đào tạo năng khiếu dành cho trẻ em từ 4–18 tuổi. Nơi mỗi bạn nhỏ được tự tin khám phá điều mình yêu thích.</p>
-    
+    <!-- PHẦN 1: HERO SECTION (CHỮ XANH KHỔNG LỒ) -->
+    <section class="sean-hero">
+      <div class="hero-text-wrapper">
+        <!-- Ngôi sao trái -->
+        <svg class="sparkle left" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 0C20 11.0457 11.0457 20 0 20C11.0457 20 20 28.9543 20 40C20 28.9543 28.9543 20 40 20C28.9543 20 20 11.0457 20 0Z" fill="white"/>
+        </svg>
+        
+        <h1 class="giant-heading">Hi. I'm Thúi Heo.<br>A Designer.</h1>
+        
+        <!-- Ngôi sao phải -->
+        <svg class="sparkle right" width="50" height="50" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 0C20 11.0457 11.0457 20 0 20C11.0457 20 20 28.9543 20 40C20 28.9543 28.9543 20 40 20C28.9543 20 20 11.0457 20 0Z" fill="white"/>
+        </svg>
+      </div>
+      <p class="hero-subtitle">I'm passionate about crafting experiences that are engaging,<br>accessible, and user-centric.</p>
+    </section>
 
-    <!-- Khung chứa hình ảnh trung tâm -->
-    <div class="hero-image">
-      <h2>(Khu vực chèn hình ảnh minh họa của bạn)</h2>
-    </div>
-  </section>
+    <!-- PHẦN 2: LƯỚI 4 Ô TƯƠNG TÁC (WORK CARDS) -->
+    <section class="work-section">
+      <div class="work-grid">
+        <!-- Ô Tím: AI -->
+        <a href="#" class="work-card card-purple">
+          <div class="card-floaters">
+            <svg class="floater f-star-1" width="90" height="90" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 0C20 11.0457 11.0457 20 0 20C11.0457 20 20 28.9543 20 40C20 28.9543 28.9543 20 40 20C28.9543 20 20 11.0457 20 0Z" fill="white"/>
+            </svg>
+            <svg class="floater f-star-2" width="50" height="50" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 0C20 11.0457 11.0457 20 0 20C11.0457 20 20 28.9543 20 40C20 28.9543 28.9543 20 40 20C28.9543 20 20 11.0457 20 0Z" fill="white"/>
+            </svg>
+            <svg class="floater f-star-3" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 0C20 11.0457 11.0457 20 0 20C11.0457 20 20 28.9543 20 40C20 28.9543 28.9543 20 40 20C28.9543 20 20 11.0457 20 0Z" fill="white"/>
+            </svg>
+          </div>
+
+          <div class="card-header">
+            <span class="brand">HELP SCOUT</span>
+            <h2>AI</h2>
+          </div>
+          <div class="card-image-placeholder"></div>
+        </a>
+        
+        <!-- Ô Xanh ngọc: Articles -->
+        <a href="#" class="work-card card-mint">
+          <!-- Hiệu ứng bay ra của Articles -->
+          <div class="card-floaters">
+            <!-- Icon Tài liệu -->
+            <svg class="floater f-doc" width="80" height="80" viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="20" y="15" width="60" height="70" rx="8" />
+              <path d="M35 35h30 M35 55h30 M35 75h15" />
+            </svg>
+            <!-- Icon Bút và Vòng tròn -->
+            <svg class="floater f-pen" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="6" stroke-linecap="round">
+              <path d="M80 30 A 35 35 0 1 0 50 85" />
+              <rect x="40" y="10" width="16" height="50" rx="8" transform="rotate(45 50 10)" />
+              <path d="M68 38 l -10 -10" />
+            </svg>
+          </div>
+
+          <div class="card-header">
+            <span class="brand">HELP SCOUT</span>
+            <h2>Articles</h2>
+          </div>
+          <div class="card-image-placeholder"></div>
+        </a>
+
+        <!-- Ô Cam nhạt: Plugins -->
+        <a href="#" class="work-card card-peach">
+          <!-- Hiệu ứng bay ra của Plugins -->
+          <div class="card-floaters">
+            <!-- Icon Lượn sóng -->
+            <svg class="floater f-squiggle" width="80" height="80" viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 70 Q 30 10, 50 50 T 90 30" />
+            </svg>
+            <!-- Icon Sao và Vòng xoáy -->
+            <svg class="floater f-swirl" width="90" height="90" viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="6" stroke-linecap="round">
+              <path d="M30 10 Q 40 40, 70 50 Q 40 60, 30 90 Q 20 60, -10 50 Q 20 40, 30 10 Z" fill="white" stroke="none"/>
+              <path d="M60 40 C 90 20, 100 70, 70 80 C 50 85, 40 60, 60 60" />
+            </svg>
+          </div>
+
+          <div class="card-header">
+            <span class="brand">FIGMA</span>
+            <h2>Plugins</h2>
+          </div>
+          <div class="card-image-placeholder"></div>
+        </a>
+
+        <!-- Ô Xanh dương: Mobile -->
+        <a href="#" class="work-card card-blue">
+          <!-- Hiệu ứng bay ra của Mobile -->
+          <div class="card-floaters">
+            <!-- Icon Điện thoại -->
+            <svg class="floater f-phone" width="75" height="75" viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="25" y="10" width="50" height="80" rx="10" />
+              <rect x="35" y="25" width="30" height="35" rx="4" />
+              <path d="M40 75 h20" stroke-width="8"/>
+            </svg>
+          </div>
+
+          <div class="card-header">
+            <span class="brand">HELP SCOUT</span>
+            <h2>Mobile</h2>
+          </div>
+          <div class="card-image-placeholder"></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- PHẦN 3: IN PROGRESS -->
+    <section class="in-progress-section">
+      <div class="in-progress-header">
+        <h1 class="giant-heading">In Progress.</h1>
+        <p class="hero-subtitle">Work in various states of design and development, from side projects,<br>to in-flight product design and development.</p>
+      </div>
+      
+      <div class="work-grid">
+        <!-- Ô Trắng: Doodler -->
+        <a href="#" class="work-card card-white">
+          <div class="card-header">
+            <span class="brand">MULTIPLAYER</span>
+            <h2>Doodler</h2>
+          </div>
+          <div class="card-image-placeholder"></div>
+        </a>
+        
+        <!-- Ô Đen: Droplette -->
+        <a href="#" class="work-card card-black">
+          <div class="card-header light-text">
+            <span class="brand">FIGMA</span>
+            <h2>Droplette</h2>
+          </div>
+          <div class="card-image-placeholder"></div>
+        </a>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
