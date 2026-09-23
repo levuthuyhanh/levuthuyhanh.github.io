@@ -5,8 +5,14 @@
   font-family: 'A'; /* Đặt tên gì tùy bạn */
   font-style: normal;
   font-weight: 400 900; 
-  /* Trỏ đường dẫn vào file ttf trong thư mục fonts */
   src: url('fonts/A.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'B';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/B.ttf') format('truetype');
 }
 
 :root {
@@ -22,6 +28,10 @@
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+html {
+  font-size: 14px; 
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -29,7 +39,7 @@
 }
 
 body {
-  font-family: 'A', sans-serif;
+  font-family: 'B', sans-serif;
   color: var(--text-dark);
   
   /* Cài đặt nền gốc của TOÀN BỘ TRANG là màu kem đặc */
