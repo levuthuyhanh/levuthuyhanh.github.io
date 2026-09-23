@@ -313,7 +313,7 @@ article,
   position: relative;
   text-decoration: none;
   color: #2c2c2c;
-  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 /* --- TỶ LỆ CÁC Ô ĐÃ ĐƯỢC CHỈNH LẠI (CÔNG THỨC 4 - 8) --- */
@@ -329,7 +329,10 @@ article,
 .in-progress-section .work-card:nth-child(2) { grid-column: span 8; } 
 
 .work-card:hover {
-  transform: scale(0.98); 
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.1), 
+              0 20px 60px rgba(0, 0, 0, 0.15);
+  
+  transition: box-shadow 0.4s ease;
 }
 
 /* Nhóm Text bên trong Card */
@@ -359,12 +362,21 @@ article,
 }
 
 /* Màu nền */
-.card-purple { background-color: #cda2e7; }
-.card-mint { background-color: #a8e4cf; }
-.card-peach { background-color: #f2c7a9; }
-.card-blue { background-color: #b1d8f8; }
-.card-white { background-color: #ffffff; }
-.card-black { background-color: #1a1a1a; }
+/* Màu nền gốc & Cài đặt thời gian chuyển màu mượt mà 0.4s */
+.card-purple { background-color: #cda2e7; transition: background-color 0.4s ease; }
+.card-mint { background-color: #a8e4cf; transition: background-color 0.4s ease; }
+.card-peach { background-color: #f2c7a9; transition: background-color 0.4s ease; }
+.card-blue { background-color: #b1d8f8; transition: background-color 0.4s ease; }
+.card-white { background-color: #ffffff; transition: background-color 0.4s ease; }
+.card-black { background-color: #1a1a1a; transition: background-color 0.4s ease; }
+
+/* KHI HOVER: Đổi sang mã màu sẫm hơn một chút xíu để tạo cảm giác lún */
+.work-card.card-purple:hover { background-color: #c291e0; } 
+.work-card.card-mint:hover { background-color: #9cdabc; } 
+.work-card.card-peach:hover { background-color: #eab694; } 
+.work-card.card-blue:hover { background-color: #a1cdf0; } 
+.work-card.card-white:hover { background-color: #f2f2f2; }
+.work-card.card-black:hover { background-color: #262626; }
 
 .card-header.light-text, 
 .card-header.light-text h2 {
@@ -1000,4 +1012,27 @@ article,
   /* Thẻ vuông nên khoảng cách đẩy ra viền ngắn hơn thẻ dài một chút */
   transform: scale(1) translate(-140px, -160px) rotate(-20deg);
   transition-delay: 0.1s;
+}
+
+/* Khung chứa ảnh nằm ở đáy thẻ */
+.card-image-placeholder {
+  position: absolute;
+  bottom: -20px; /* Cố tình đặt tụt xuống dưới viền thẻ một chút */
+  left: 10%;
+  width: 80%;
+  height: 60%; /* Chiếm phần nửa dưới của thẻ */
+  
+  /* Giả lập giao diện web/app (Tạm thời bằng màu trắng và có bóng đổ) */
+  background-color: #ffffff;
+  border-radius: 12px 12px 0 0; /* Chỉ bo góc trên */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  
+  /* Chuyển động đồng bộ nhịp nhàng */
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 1; /* Nằm dưới chữ (z-index: 2) */
+}
+
+/* KHI HOVER VÀO THẺ: Hình ảnh bên trong sẽ bị đẩy trồi lên và bự ra một xíu */
+.work-card:hover .card-image-placeholder {
+  transform: translateY(-25px) scale(1.03); 
 }
