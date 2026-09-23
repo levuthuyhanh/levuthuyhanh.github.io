@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EPIC Talent Center</title>
+  <link rel="preload" href="fonts/ten-font.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="style.css"> 
+</head>
+<body id="top">
+  
+  
+
+  <!-- THANH ĐIỀU KHIỂN NỔI (FLOATING NAV) -->
+<header class="floating-header">
+  <nav class="sean-nav-pill" aria-label="Điều hướng chính">
+    <!-- Di chuyển class active và dấu / tùy theo trang bạn đang đứng nhé -->
+    <a href="index.html" class="nav-item">WORK <span class="slash">/</span></a>
+    <a href="about.html" class="nav-item">ABOUT</a>
+    
+    <a href="play.html" class="nav-item active">PLAY</a>
+    
+    <a href="note.html" class="nav-item">NOTE</a>
+  </nav>
+</header>
+
+<main class="play-page">
+  <!-- Phần 1: Tiêu đề siêu to có ngôi sao -->
+  <section class="play-hero">
+    <h1 class="giant-heading">Chương trình.<span class="sparkle">✦</span></h1>
+    <p>Khám phá các khóa học và hoạt động ngoại khóa đa dạng, được thiết kế để khơi gợi niềm vui, sự sáng tạo & đôi khi là một chút phá cách.</p>
+  </section>
+
+  <!-- Phần 2: Lưới các thẻ bài (Cards Grid) -->
+  <section class="play-grid-section">
+    <div class="play-grid">
+      
+      <!-- Thẻ bài kiểu 1: Hình ảnh to nằm bên dưới (Giống Droplette) -->
+      <a href="#" class="play-card card-tall">
+        <div class="card-text">
+          <h3>Mỹ thuật Sáng tạo</h3>
+          <p>Học cách phối màu, vẽ phác thảo và phát triển tư duy thẩm mỹ qua từng nét cọ.</p>
+        </div>
+        <div class="card-image dark-ui">
+          <!-- Giả lập giao diện hình ảnh minh họa -->
+          <div class="fake-dot red"></div>
+          <div class="fake-dot yellow"></div>
+          <div class="fake-dot green"></div>
+        </div>
+      </a>
+
+      <!-- Thẻ bài kiểu 2: Icon tròn nằm bên phải (Giống Browso) -->
+      <a href="#" class="play-card card-row">
+        <div class="card-text">
+          <h3>Lập trình Nhí <span class="badge">Mới</span></h3>
+          <p>Làm quen với tư duy logic và tự tay tạo ra trò chơi đầu tiên.</p>
+        </div>
+        <div class="card-icon blue-icon">
+          💻
+        </div>
+      </a>
+
+      <!-- Thẻ bài kiểu 2 khác -->
+      <a href="#" class="play-card card-row">
+        <div class="card-text">
+          <h3>Kỹ năng Thuyết trình</h3>
+          <p>Tự tin đứng trước đám đông và truyền đạt ý tưởng lôi cuốn.</p>
+        </div>
+        <div class="card-icon pink-icon">
+          🎤
+        </div>
+      </a>
+
+      <!-- Thẻ bài kiểu 1 khác -->
+      <a href="#" class="play-card card-tall">
+        <div class="card-text">
+          <h3>Âm nhạc & Nhịp điệu</h3>
+          <p>Cảm thụ âm nhạc, học chơi nhạc cụ và hòa mình vào những giai điệu vui nhộn.</p>
+        </div>
+        <div class="card-image purple-ui">
+           <div class="fake-wave"></div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+</main>
+
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-left">
+        <p>© 2026 EPIC Talent Center <span>•</span> Thỏa sức đam mê</p>
+      </div>
+      
+      <div class="footer-right">
+        <div class="footer-column">
+          <h4>Elsewhere</h4>
+          <a href="#">Figma</a>
+          <a href="#">Github</a>
+          <a href="#">Posts</a>
+          <a href="#">CV</a>
+          <a href="#">LinkedIn</a>
+        </div>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <a href="#">Message</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phần thanh thước kẻ và nút mặt trời -->
+    <div class="footer-bottom">
+      <div class="theme-toggle">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </div>
+      <div class="ruler">
+        <div class="tick minor"></div>
+        <div class="tick minor"></div>
+        <div class="tick minor"></div>
+        <div class="tick minor"></div>
+        <div class="tick minor"></div>
+        <div class="tick major"></div>
+        <div class="tick major"></div>
+        <div class="tick major"></div>
+        <div class="tick major"></div>
+        <div class="tick major"></div>
+        <div class="tick major"></div>
+        <div class="tick major"></div>
+        
+        <div class="tick center"></div>
+        
+        <div class="tick major"></div>
+        <div class="tick major"></div>
+        <div class="tick major"></div>
+        <div class="tick major"></div>
+        <div class="tick minor"></div>
+        <div class="tick minor"></div>
+        <div class="tick minor"></div>
+        <div class="tick minor"></div>
+        <div class="tick minor"></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BỘ NÃO JAVASCRIPT XỬ LÝ MENU CUỘN -->
+  <script>
+    // Lắng nghe hành động cuộn chuột của người dùng
+    window.addEventListener('scroll', function() {
+      // Tìm cái menu viên thuốc
+      const navPill = document.querySelector('.sean-nav-pill');
+      
+      // Nếu cuộn xuống quá 20px thì bật nền màu kem lên
+      if (window.scrollY > 20) {
+        navPill.classList.add('scrolled');
+      } 
+      // Nếu kéo ngược lại lên kịch trần thì tắt nền đi (trở về trong suốt)
+      else {
+        navPill.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>

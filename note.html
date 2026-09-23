@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EPIC Talent Center</title>
+  <link rel="preload" href="fonts/ten-font.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="style.css"> 
+</head>
+<body id="top">
+  
+  
+
+  <!-- THANH ĐIỀU KHIỂN NỔI (FLOATING NAV) -->
+<header class="floating-header">
+  <nav class="sean-nav-pill" aria-label="Điều hướng chính">
+    <!-- Di chuyển class active và dấu / tùy theo trang bạn đang đứng nhé -->
+    <a href="index.html" class="nav-item">WORK <span class="slash">/</span></a>
+    <a href="about.html" class="nav-item">ABOUT</a>
+    
+    <a href="play.html" class="nav-item">PLAY</a>
+    
+    <a href="note.html" class="nav-item active">NOTE</a>
+  </nav>
+</header>
+
+<main class="notes-page">
+  <!-- Phần Tiêu đề -->
+  <section class="notes-hero">
+    <h1 class="giant-heading">Giáo viên.<span class="sparkle">✦</span></h1>
+    <p>Đội ngũ những người dẫn đường tận tâm, tràn đầy năng lượng và luôn sẵn sàng đồng hành cùng các tài năng nhí.</p>
+  </section>
+
+  <!-- Danh sách Giáo viên xếp dọc (Bố cục Notes) -->
+  <section class="notes-list-section">
+    <div class="notes-list">
+      
+      <!-- Thẻ Giáo viên 1 -->
+      <a href="#" class="note-item">
+        <span class="note-meta">KHOA ÂM NHẠC</span>
+        <h3>Thầy Minh Khang</h3>
+        <p>Tốt nghiệp Nhạc viện, người truyền lửa đam mê piano và thanh nhạc với phong cách "học mà chơi" cực kỳ thú vị.</p>
+      </a>
+
+      <!-- Thẻ Giáo viên 2 -->
+      <a href="#" class="note-item">
+        <span class="note-meta">KHOA MỸ THUẬT</span>
+        <h3>Cô Lan Anh</h3>
+        <p>Họa sĩ minh họa với 5 năm kinh nghiệm làm việc cùng trẻ em, giúp các bé bứt phá tư duy không gian và màu sắc qua từng nét cọ.</p>
+      </a>
+
+      <!-- Thẻ Giáo viên 3 -->
+      <a href="#" class="note-item">
+        <span class="note-meta">KHOA KỸ NĂNG MỀM</span>
+        <h3>Thầy Quốc Bảo</h3>
+        <p>Chuyên gia tâm lý học trẻ em. Người đứng sau những giờ học kỹ năng giao tiếp ngập tràn tiếng cười và sự tự tin.</p>
+      </a>
+
+    </div>
+  </section>
+</main>
+
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-left">
+        <p>© 2026 EPIC Talent Center <span>•</span> Thỏa sức đam mê</p>
+      </div>
+      
+      <div class="footer-right">
+        <div class="footer-column">
+          <h4>Elsewhere</h4>
+          <a href="#">Figma</a>
+          <a href="#">Github</a>
+          <a href="#">Posts</a>
+          <a href="#">CV</a>
+          <a href="#">LinkedIn</a>
+        </div>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <a href="#">Message</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phần thanh thước kẻ và nút mặt trời -->
+    <div class="footer-bottom">
+      <div class="theme-toggle">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </div>
+      <div class="ruler">
+        <div class="tick minor"></div>
+        <div class="tick minor"></div>
+        <div class="tick minor"></div>
+        <div class="tick minor"></div>
+        <div class="tick minor"></div>
+        <div class="tick major"></div>
+        <div class="tick major"></div>
+        <div class="tick major"></div>
+        <div class="tick major"></div>
+        <div class="tick major"></div>
+        <div class="tick major"></div>
+        <div class="tick major"></div>
+        
+        <div class="tick center"></div>
+        
+        <div class="tick major"></div>
+        <div class="tick major"></div>
+        <div class="tick major"></div>
+        <div class="tick major"></div>
+        <div class="tick minor"></div>
+        <div class="tick minor"></div>
+        <div class="tick minor"></div>
+        <div class="tick minor"></div>
+        <div class="tick minor"></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BỘ NÃO JAVASCRIPT XỬ LÝ MENU CUỘN -->
+  <script>
+    // Lắng nghe hành động cuộn chuột của người dùng
+    window.addEventListener('scroll', function() {
+      // Tìm cái menu viên thuốc
+      const navPill = document.querySelector('.sean-nav-pill');
+      
+      // Nếu cuộn xuống quá 20px thì bật nền màu kem lên
+      if (window.scrollY > 20) {
+        navPill.classList.add('scrolled');
+      } 
+      // Nếu kéo ngược lại lên kịch trần thì tắt nền đi (trở về trong suốt)
+      else {
+        navPill.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
