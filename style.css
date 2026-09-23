@@ -121,7 +121,11 @@ a { text-decoration: none; color: inherit; }
 
 /* 1. Gắn hiệu ứng nảy cho NỘI DUNG CỦA CẢ 2 TRANG */
 /* LƯU Ý: Đã cố tình bỏ 'header' ra ngoài để thanh menu đứng im như mỏ neo */
-#trang-chu h1, #trang-chu p, .hero-buttons, .hero-image, article,
+.sean-hero .hero-text-wrapper, 
+.sean-hero .hero-subtitle, 
+.work-card, 
+.in-progress-header, 
+article,
 .about-intro, .profile-grid, .values-container .value-item,
 .play-hero h1, .play-hero p, .play-card,
 .notes-hero h1, .notes-hero p, .note-item {
@@ -130,13 +134,15 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* 2. Cài đặt độ trễ cho TRANG CHỦ (Từng nhịp một) */
-#trang-chu h1 { animation-delay: 0.05s; }
-#trang-chu p { animation-delay: 0.1s; }
-.hero-buttons { animation-delay: 0.15s; }
-.hero-image { animation-delay: 0.2s; }
-article:nth-child(1) { animation-delay: 0.1s; }
-article:nth-child(2) { animation-delay: 0.15s; }
-article:nth-child(3) { animation-delay: 0.2s; }
+.sean-hero .hero-text-wrapper { animation-delay: 0.05s; }
+.sean-hero .hero-subtitle { animation-delay: 0.1s; }
+.work-section .work-card:nth-child(1) { animation-delay: 0.15s; }
+.work-section .work-card:nth-child(2) { animation-delay: 0.2s; }
+.work-section .work-card:nth-child(3) { animation-delay: 0.25s; }
+.work-section .work-card:nth-child(4) { animation-delay: 0.3s; }
+.in-progress-header { animation-delay: 0.35s; }
+.in-progress-section .work-card:nth-child(1) { animation-delay: 0.4s; }
+.in-progress-section .work-card:nth-child(2) { animation-delay: 0.45s; }
 
 /* 3. Cài đặt độ trễ cho TRANG ABOUT (Khắc phục lỗi "nhảy quá nhanh") */
 .about-intro { animation-delay: 0.05s; }
