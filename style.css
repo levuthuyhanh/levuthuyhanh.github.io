@@ -311,9 +311,21 @@ article,
   height: 450px; 
   padding: 45px 50px; 
   position: relative;
+  top: 0;
   text-decoration: none;
   color: #2c2c2c;
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  
+  /* Điểm xuất phát của bóng đổ */
+  box-shadow: 
+    0 0 0 -5px rgba(0, 0, 0, 0),
+    0 0 0 -10px rgba(0, 0, 0, 0),
+    0 0 0 -20px rgba(0, 0, 0, 0);
+
+  /* BỘ CHỈ HUY HIỆU ỨNG: Tách bạch rõ ràng từng nhiệm vụ */
+  transition: 
+    background-color 0.4s ease, 
+    box-shadow 0.7s cubic-bezier(0.34, 1.25, 0.64, 1), 
+    top 0.7s cubic-bezier(0.34, 1.25, 0.64, 1);
 }
 
 /* --- TỶ LỆ CÁC Ô ĐÃ ĐƯỢC CHỈNH LẠI (CÔNG THỨC 4 - 8) --- */
@@ -329,10 +341,12 @@ article,
 .in-progress-section .work-card:nth-child(2) { grid-column: span 8; } 
 
 .work-card:hover {
-  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.1), 
-              0 20px 60px rgba(0, 0, 0, 0.15);
-  
-  transition: box-shadow 0.4s ease;
+  top: -10px;
+  /* Điểm kết thúc của bóng đổ */
+  box-shadow: 
+    0 10px 20px -5px rgba(0, 0, 0, 0.20), 
+    0 25px 50px -10px rgba(0, 0, 0, 0.15), 
+    0 50px 100px -20px rgba(0, 0, 0, 0.10);
 }
 
 /* Nhóm Text bên trong Card */
@@ -362,21 +376,20 @@ article,
 }
 
 /* Màu nền */
-/* Màu nền gốc & Cài đặt thời gian chuyển màu mượt mà 0.4s */
-.card-purple { background-color: #cda2e7; transition: background-color 0.4s ease; }
-.card-mint { background-color: #a8e4cf; transition: background-color 0.4s ease; }
-.card-peach { background-color: #f2c7a9; transition: background-color 0.4s ease; }
-.card-blue { background-color: #b1d8f8; transition: background-color 0.4s ease; }
-.card-white { background-color: #ffffff; transition: background-color 0.4s ease; }
-.card-black { background-color: #1a1a1a; transition: background-color 0.4s ease; }
+.card-purple { background-color: #cda2e7; }
+.card-mint { background-color: #a8e4cf; }
+.card-peach { background-color: #f2c7a9; }
+.card-blue { background-color: #b1d8f8; }
+.card-white { background-color: #ffffff; }
+.card-black { background-color: #1a1a1a; }
 
-/* KHI HOVER: Đổi sang mã màu sẫm hơn một chút xíu để tạo cảm giác lún */
-.work-card.card-purple:hover { background-color: #c291e0; } 
-.work-card.card-mint:hover { background-color: #9cdabc; } 
-.work-card.card-peach:hover { background-color: #eab694; } 
-.work-card.card-blue:hover { background-color: #a1cdf0; } 
-.work-card.card-white:hover { background-color: #f2f2f2; }
-.work-card.card-black:hover { background-color: #262626; }
+/* KHI HOVER: Đổi sang mã màu SÁNG HƠN một chút xíu để tạo cảm giác thẻ bài phát sáng */
+.work-card.card-purple:hover { background-color: #d8b4ee; } /* Tím sáng hơn */
+.work-card.card-mint:hover { background-color: #b5eedc; } /* Xanh ngọc sáng hơn */
+.work-card.card-peach:hover { background-color: #f6d4ba; } /* Cam đào sáng hơn */
+.work-card.card-blue:hover { background-color: #c5e3fb; } /* Xanh dương sáng hơn */
+.work-card.card-white:hover { background-color: #ffffff; } /* Trắng thì giữ nguyên vì đã sáng tối đa */
+.work-card.card-black:hover { background-color: #2a2a2a; } /* Đen thì nhạt đi một chút thành xám đậm */
 
 .card-header.light-text, 
 .card-header.light-text h2 {
@@ -925,114 +938,89 @@ article,
   }
 }
 /* =========================================
-   HIỆU ỨNG CÁC BIỂU TƯỢNG BAY RA (HOVER)
+   HIỆU ỨNG CÁC BIỂU TƯỢNG XUẤT HIỆN TỪ RÌA (KHÔNG ĐỔI KÍCH THƯỚC)
 ========================================= */
 .card-floaters {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  pointer-events: none; /* Tránh cản trở click chuột */
+  pointer-events: none;
   z-index: 10;
 }
 
-/* Cài đặt gốc: Ẩn đi và thu nhỏ về 0 giống y hệt .star */
+/* Cài đặt gốc: Ẩn tàng hình (opacity: 0), KHÔNG DÙNG SCALE nữa */
 .floater {
   position: absolute;
   opacity: 0;
-  transform: scale(0) translate(0, 0) rotate(0deg); 
-  /* Dùng chung hiệu ứng nảy (bouncy) giống ngôi sao */
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+  /* Chuyển động 1 giây êm ái */
+  transition: all 0.3s ease-out; 
 }
 
-/* Định vị điểm xuất phát cho từng icon nằm ẩn ở giữa thẻ */
-.card-mint .f-doc { top: 35%; left: 40%; }
-.card-mint .f-pen { top: 25%; right: 35%; }
+/* --- 0. Ô TÍM (AI) --- */
+/* Vị trí gốc: Đặt sẵn ở rìa, đẩy lệch đi khoảng 15px so với đích đến */
+.card-purple .f-star-1 { top: -20px; left: -30px; transform: translateY(15px) rotate(15deg); }
+.card-purple .f-star-2 { top: -10px; left: -80px; transform: translateY(15px) rotate(-10deg); }
+.card-purple .f-star-3 { top: -60px; left: 50px; transform: translateY(15px) rotate(25deg); }
 
-.card-peach .f-squiggle { bottom: 35%; left: 30%; }
-.card-peach .f-swirl { top: 25%; left: 45%; }
+/* Khi Hover: Trượt 15px về vị trí chuẩn và hiện rõ dần */
+.card-purple:hover .f-star-1 { opacity: 1; transform: translateY(0) rotate(15deg); transition-delay: 0.1s; }
+.card-purple:hover .f-star-2 { opacity: 0.8; transform: translateY(0) rotate(-10deg); transition-delay: 0.2s; }
+.card-purple:hover .f-star-3 { opacity: 0.9; transform: translateY(0) rotate(25deg); transition-delay: 0.15s; }
 
-.card-blue .f-phone { top: 25%; left: 40%; }
 
-/* --- KHI HOVER: Phóng to (scale 1), dịch chuyển ra tận viền và xoay nghiêng --- */
+/* --- 1. Ô XANH NGỌC (ARTICLES) --- */
+/* Đặt sẵn ở hai góc thẻ, dịch lệch 10px */
+.card-mint .f-doc { top: -50px; left: -40px; transform: translate(10px, 10px) rotate(-15deg); }
+.card-mint .f-pen { top: -50px; right: -20px; transform: translate(-10px, 10px) rotate(15deg); }
 
-/* 0. Ô Tím (AI) */
-/* Vị trí gốc (tập trung ở một góc phía trên bên trái) */
-.card-purple .f-star-1 { top: 15%; left: 20%; }
-.card-purple .f-star-2 { top: 10%; left: 10%; }
-.card-purple .f-star-3 { top: 12%; left: 35%; }
+/* Hiện rõ và trượt nhẹ về đúng góc */
+.card-mint:hover .f-doc { opacity: 1; transform: translate(0, 0) rotate(-15deg); transition-delay: 0.1s; }
+.card-mint:hover .f-pen { opacity: 1; transform: translate(0, 0) rotate(15deg); transition-delay: 0.2s; }
 
-/* Khi Hover: Bắn túa ra ngoài mép */
-.card-purple:hover .f-star-1 {
-  opacity: 1;
-  transform: scale(1) translate(-70px, -60px) rotate(15deg);
-  transition-delay: 0.1s;
-}
-.card-purple:hover .f-star-2 {
-  opacity: 0.8;
-  transform: scale(1) translate(-90px, -10px) rotate(-10deg);
-  transition-delay: 0.2s;
-}
-.card-purple:hover .f-star-3 {
-  opacity: 0.9;
-  transform: scale(1) translate(40px, -80px) rotate(25deg);
-  transition-delay: 0.15s;
-}
 
-/* 1. Ô Xanh ngọc (Articles) - Thẻ chữ nhật dài */
-.card-mint:hover .f-doc {
-  opacity: 1;
-  /* Đẩy mạnh sang trái và lên trên để chạm mép viền */
-  transform: scale(1) translate(-280px, -180px) rotate(-15deg);
-  transition-delay: 0.1s; 
-}
-.card-mint:hover .f-pen {
-  opacity: 1;
-  /* Đẩy mạnh sang phải và lên trên */
-  transform: scale(1) translate(280px, -160px) rotate(15deg);
-  transition-delay: 0.2s; 
-}
+/* --- 2. Ô CAM (PLUGINS) --- */
+/* Lượn sóng góc dưới, sao vòng xoáy góc trên */
+.card-peach .f-squiggle { bottom: -20px; left: -60px; transform: translate(10px, -10px) rotate(-10deg); }
+.card-peach .f-swirl { top: -50px; right: -20px; transform: translate(-10px, 10px) rotate(15deg); }
 
-/* 2. Ô Cam (Plugins) - Thẻ chữ nhật dài */
-.card-peach:hover .f-squiggle {
-  opacity: 1;
-  /* Đẩy xa sang mép trái */
-  transform: scale(1) translate(-350px, 20px) rotate(-10deg);
-  transition-delay: 0.15s;
-}
-.card-peach:hover .f-swirl {
-  opacity: 1;
-  /* Đẩy thẳng lên viền trên */
-  transform: scale(1) translate(20px, -170px) rotate(15deg);
-  transition-delay: 0.1s;
-}
+.card-peach:hover .f-squiggle { opacity: 1; transform: translate(0, 0) rotate(-10deg); transition-delay: 0.15s; }
+.card-peach:hover .f-swirl { opacity: 1; transform: translate(0, 0) rotate(15deg); transition-delay: 0.1s; }
 
-/* 3. Ô Xanh dương (Mobile) - Thẻ hình vuông */
-.card-blue:hover .f-phone {
-  opacity: 1;
-  /* Thẻ vuông nên khoảng cách đẩy ra viền ngắn hơn thẻ dài một chút */
-  transform: scale(1) translate(-140px, -160px) rotate(-20deg);
-  transition-delay: 0.1s;
-}
+
+/* --- 3. Ô XANH DƯƠNG (MOBILE) --- */
+/* Điện thoại ở góc trên trái */
+.card-blue .f-phone { top: -60px; left: -30px; transform: translate(10px, 10px) rotate(-20deg); }
+
+.card-blue:hover .f-phone { opacity: 1; transform: translate(0, 0) rotate(-20deg); transition-delay: 0.1s; }
 
 /* Khung chứa ảnh nằm ở đáy thẻ */
 .card-image-placeholder {
   position: absolute;
-  bottom: -20px; /* Cố tình đặt tụt xuống dưới viền thẻ một chút */
-  left: 10%;
-  width: 80%;
-  height: 60%; /* Chiếm phần nửa dưới của thẻ */
+  top: 0; left: 0; 
+  width: 100%; height: 100%;
+  border-radius: 48px; 
   
-  /* Giả lập giao diện web/app (Tạm thời bằng màu trắng và có bóng đổ) */
-  background-color: #ffffff;
-  border-radius: 12px 12px 0 0; /* Chỉ bo góc trên */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  
-  /* Chuyển động đồng bộ nhịp nhàng */
-  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-  z-index: 1; /* Nằm dưới chữ (z-index: 2) */
+  overflow: hidden; 
+  z-index: 1; 
 }
 
-/* KHI HOVER VÀO THẺ: Hình ảnh bên trong sẽ bị đẩy trồi lên và bự ra một xíu */
-.work-card:hover .card-image-placeholder {
-  transform: translateY(-25px) scale(1.03); 
+.card-image-placeholder::after {
+  content: "";
+  position: absolute;
+  bottom: 0; /* Bám sát đáy */
+  left: 10%;
+  width: 80%;
+  height: 55%;
+  background-color: #ffffff; /* Giả lập hình ảnh */
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.05); /* Bóng đổ hắt lên nhẹ */
+  
+  /* Cài đặt thời gian kéo xuống mượt mà */
+  transition: transform 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* KHI RÊ CHUỘT: Kéo hình ảnh tụt xuống dưới */
+.work-card:hover .card-image-placeholder::after {
+  /* Kéo tụt xuống 40px. Nhờ cái mặt nạ ở trên, phần thòi ra sẽ bị cắt gọn gàng! */
+  transform: translateY(40px); 
 }
