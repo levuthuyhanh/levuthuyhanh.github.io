@@ -316,7 +316,7 @@ article,
 .hero-subtitle {
   font-size: 1.25rem;
   color: #5d7067;
-  font-family: 'BeVietnamPro', sans-serif; /* Dùng font chuẩn cho chữ nhỏ */
+  font-family: 'B', sans-serif; /* Dùng font chuẩn cho chữ nhỏ */
   line-height: 1.6;
   font-weight: 500;
 }
@@ -396,7 +396,7 @@ article,
 }
 
 .card-header .brand {
-  font-family: 'BeVietnamPro', sans-serif;
+  font-family: 'B', sans-serif;
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 2px;
@@ -407,7 +407,7 @@ article,
 }
 
 .card-header h2 {
-  font-size: 3.5rem; 
+  font-size: 3rem; 
   font-family: 'A', sans-serif;
   font-weight: 900;
   letter-spacing: -1.5px;
@@ -1197,7 +1197,7 @@ article,
 }
 
 .brand-label {
-  font-family: 'BeVietnamPro', sans-serif;
+  font-family: 'B', sans-serif;
   font-size: 1rem;
   font-weight: 800;
   letter-spacing: 2.5px;
@@ -1238,7 +1238,7 @@ article,
   text-transform: uppercase;
   letter-spacing: 1.5px;
   margin-bottom: 10px;
-  font-family: 'BeVietnamPro', sans-serif;
+  font-family: 'B', sans-serif;
 }
 
 .meta-item p {
@@ -1264,10 +1264,9 @@ article,
   box-shadow: 0 20px 40px rgba(0,0,0,0.05);
 }
 
-.showcase-image img {
+.showcase-image img, .showcase-image video {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
 }
 
@@ -1276,9 +1275,9 @@ article,
 }
 
 .mid-image {
-  aspect-ratio: 4 / 3;
   border-radius: 40px;
   margin: 60px 0;
+  height: auto;
 }
 
 .placeholder-text {
@@ -1375,4 +1374,29 @@ article,
   font-weight: 700;
   color: #0c5140;
   margin-top: 50px;
+}
+
+/* Lưới 3 ảnh dọc đứng cạnh nhau */
+.quadro-gallery {
+  max-width: 1400px; /* Bằng với khung project-showcase của ảnh ngang */
+  margin: 0 auto 100px;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Chia đúng 3 cột bằng nhau */
+  gap: 40px; /* Khoảng cách giữa 3 ảnh */
+}
+
+/* Ép các khối ảnh trong lưới này phải cao bằng nhau */
+.quadro-gallery .showcase-image {
+  height: 100%; 
+  margin: 0; /* Xóa margin thừa */
+}
+
+/* Responsive cho điện thoại (tự rã thành 1 cột dọc) */
+@media (max-width: 768px) {
+  .trio-gallery {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 0 20px;
+  }
 }
