@@ -20,6 +20,7 @@
     <a href="play.html" class="nav-item">PLAY</a>
     
     <a href="note.html" class="nav-item">NOTE</a>
+    <a href="#" id="open-contact" class="nav-item">CONTACT</a>
   </nav>
 </header>
 
@@ -245,5 +246,60 @@
       }
     });
   </script>
+
+  <!-- KHUNG CHATBOX ẨN (Nằm ở góc phải màn hình) -->
+<div id="sean-chatbox" class="chatbox-wrapper">
+  <!-- Phần Header màu xanh đậm -->
+  <div class="chatbox-header">
+    <div class="bot-info">
+      <!-- Thay đường dẫn ảnh avatar của bạn vào đây -->
+      <img src="assets/chatbox.jpg" alt="Thúi Heo" class="bot-avatar" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'><circle cx=\'20\' cy=\'20\' r=\'20\' fill=\'white\'/></svg>'">
+      <div>
+        <h4>Thúi Heo Bot</h4>
+        <p>Ask me a question</p>
+      </div>
+    </div>
+    <!-- Nút tắt (dấu X) -->
+    <button id="close-chat" class="close-chat-btn">&times;</button>
+  </div>
+
+  <!-- Phần Nội dung Chat -->
+  <div class="chatbox-body">
+    <div class="chat-msg bot-msg">Hi!</div>
+    <div class="chat-msg bot-msg">I'm Thúi Heo Bot. I'm here to help you with any questions you might have about my work.</div>
+    <div class="chat-msg bot-msg">How can I help you today?</div>
+    
+    <!-- Các nút tùy chọn -->
+    <div class="chat-options">
+      <a href="#" class="chat-option-btn">Looking for your old portfolio</a>
+      <a href="#" class="chat-option-btn">Just saying hello!</a>
+      <a href="#" class="chat-option-btn">Interested in mentorship</a>
+      <a href="#" class="chat-option-btn">We'd like to hire you</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const contactBtn = document.getElementById('open-contact');
+  const chatbox = document.getElementById('sean-chatbox');
+  const closeBtn = document.getElementById('close-chat');
+
+  // Lắng nghe sự kiện click vào nút Contact
+  contactBtn.addEventListener('click', function(e) {
+    e.preventDefault(); 
+    
+    // LỆNH TOGGLE: Tự động đảo ngược trạng thái mỗi lần bấm
+    chatbox.classList.toggle('active'); 
+    
+    // Đồng thời gắn thêm 1 class vào chính nút Contact để lát nữa ta CSS cái vòng sáng
+    contactBtn.classList.toggle('contact-active');
+  });
+
+  // Khi bấm vào dấu X, phải tắt cả chatbox lẫn vòng sáng ở nút Contact
+  closeBtn.addEventListener('click', function() {
+    chatbox.classList.remove('active'); 
+    contactBtn.classList.remove('contact-active');
+  });
+</script>
 </body>
 </html>
