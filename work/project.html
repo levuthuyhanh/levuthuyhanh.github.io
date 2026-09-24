@@ -4,97 +4,88 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hanh portfolio</title>
-  <link rel="preload" href="fonts/A.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="fonts/B.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="icon" href="assets/favicon.png" type="image/png">
-  <link rel="stylesheet" href="style.css"> 
+  <link rel="preload" href="../fonts/A.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="../fonts/B.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="icon" href="../assets/favicon.png?v=2" type="image/png">
+  <link rel="stylesheet" href="../style.css"> 
 </head>
-<body id="top" class="preload">
+<body id="top">
   
   
 
   <!-- THANH ĐIỀU KHIỂN NỔI (FLOATING NAV) -->
 <header class="floating-header">
   <nav class="sean-nav-pill" aria-label="Điều hướng chính">
-    <!-- Di chuyển class active và dấu / tùy theo trang bạn đang đứng nhé -->
-    <a href="index.html" class="nav-item">WORK <span class="slash">/</span></a>
-    <a href="about.html" class="nav-item active">ABOUT</a>
+    <a href="../index.html" class="nav-item active">WORK <span class="slash">/</span></a>
+    <a href="../about.html" class="nav-item">ABOUT</a>
     
-    <a href="play.html" class="nav-item">PLAY</a>
+    <a href="../play.html" class="nav-item">PLAY</a>
     
-    <a href="note.html" class="nav-item">NOTE</a>
+    <a href="../note.html" class="nav-item">NOTE</a>
     <a href="#" id="open-contact" class="nav-item">CONTACT</a>
   </nav>
 </header>
 
-  <main class="about-page">
-  <!-- Phần 1: Tiêu đề siêu to -->
-  <section class="about-intro">
-    <h1 class="giant-heading">I'm Thuy Hanh.</h1>
-  </section>
+  <main class="project-detail-page">
+    
+    <!-- PHẦN 1: HEADER DỰ ÁN -->
+    <section class="project-hero">
+      <div class="brand-label">HELP SCOUT</div>
+      <h1 class="giant-heading">AI</h1>
+      <p class="hero-subtitle">Designing an intuitive and non-intrusive AI assistant that helps users draft better emails and articles without losing their personal voice.</p>
+    </section>
 
-  <!-- Phần 2: Ảnh cổng vòm và Nội dung giới thiệu -->
-  <section class="about-profile">
-    <div class="profile-grid">
-      <!-- Cột trái: Ảnh chân dung hình vòm -->
-      <div class="profile-image-wrapper">
-        <div class="profile-arch">
-          <!-- Thay ảnh chân dung vào đây -->
-          <img src="assets/logo1A.png" alt="Chân dung">
+    <!-- PHẦN 2: THÔNG TIN TÓM TẮT (META DATA) -->
+    <section class="project-meta-container">
+      <div class="project-meta">
+        <div class="meta-item">
+          <h4>Role</h4>
+          <p>Product Designer</p>
+        </div>
+        <div class="meta-item">
+          <h4>Platform</h4>
+          <p>Web Application</p>
+        </div>
+        <div class="meta-item">
+          <h4>Year</h4>
+          <p>2024</p>
         </div>
       </div>
-      
-      <!-- Cột phải: Đoạn văn mô tả -->
-      <div class="profile-text">
-        <h2>I'm a Product Designer working remotely from Ho Chi Minh, VietNam.</h2>
-        <p>Over the past 0 years, I've worked in various areas of digital design, including front-end development, email, marketing, and app UI/UX. I'm proud to have worn many hats.</p>
-        <p>These days, I focus on leading design at GiveDirectly, a nonprofit that lets donors send money directly to the world's poorest households.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Phần 3: Khối nền xám/kem chứa 4 giá trị cốt lõi -->
-  <section class="about-values">
-    <div class="values-container">
-      <div class="values-grid">
-        
-        <!-- Cột 1 -->
-        <div class="value-item">
-          <span class="value-number">01</span>
-          <h3>Make it</h3>
-          <p>I sketch wireframes and make prototypes. Talking through tactile designs existing in the browser is worth its weight. Design tools only carry you so far; the rest should be realized with a link my team can rally around.</p>
-        </div>
-        
-        <!-- Cột 2 -->
-        <div class="value-item">
-          <span class="value-number">02</span>
-          <h3>Collaborate</h3>
-          <p>Good design is not created in a vacuum but rather in a shared space. It must be facilitated and iterated upon as a team. I aim to include stakeholders in my design process and create a collaborative environment that welcomes and encourages feedback.</p>
-        </div>
-        
-        <!-- Cột 3 -->
-        <div class="value-item">
-          <span class="value-number">03</span>
-          <h3>Accessible FTW</h3>
-          <p>I aim to make everything I design accessible to all for one main reason - it's the right thing to do. Accessible products benefit the many, not the few.</p>
-        </div>
-        
-        <!-- Cột 4 -->
-        <div class="value-item">
-          <span class="value-number">04</span>
-          <h3>Keep experimenting</h3>
-          <p>Everything I create is subject to change and experimentation. Not everything will work, but it's worth trying - and learning from what doesn't.</p>
-        </div>
-        
+    <!-- PHẦN 3: ẢNH BÌA HERO SIÊU TO -->
+    <!-- ẢNH BÌA HERO SIÊU TO: Nhúng trực tiếp file PDF -->
+    <section class="project-showcase">
+      <div id="pdf-render-container" class="showcase-image custom-pdf-viewer">
+        <div id="pdf-loading">Đang tải tạp chí độ nét cao...</div>
+        <!-- Script sẽ tự động nhét các trang PDF cực nét vào đây -->
       </div>
-    </div>
-  </section>
-</main>
+    </section>
+
+    <!-- PHẦN 4: NỘI DUNG KỂ CHUYỆN (TEXT & ẢNH NHỎ) -->
+    <section class="project-content">
+      <div class="text-block">
+        <h2>The Challenge</h2>
+        <p>Integrating AI into an existing workflow can often feel overwhelming for users. The goal was to introduce intelligent features like summarizing, expanding, or rewriting text directly where the user needs it, without cluttering the interface.</p>
+      </div>
+
+      <!-- Ảnh minh họa xen kẽ -->
+      <div class="showcase-image mid-image" style="background-color: #f6f5ee;">
+        <div class="placeholder-text">Feature Detail Image</div>
+      </div>
+
+      <div class="text-block">
+        <h2>The Solution</h2>
+        <p>We designed a contextual popover menu that only appears when text is highlighted or when explicitly triggered via a subtle sparkle icon. The UI uses soft purple tones to distinguish AI-generated suggestions from standard system elements, ensuring clear visual hierarchy.</p>
+      </div>
+    </section>
+
+  </main>
 
   <footer class="site-footer">
     <div class="footer-top">
       <div class="footer-left">
-        <p>© 2026 EPIC Talent Center <span>•</span> Thỏa sức đam mê</p>
+        <p>© 2026 Hana <span>•</span> Thỏa sức đam mê</p>
       </div>
       
       <div class="footer-right">
@@ -173,16 +164,15 @@
         navPill.classList.remove('scrolled');
       }
     });
-    window.dispatchEvent(new Event('scroll'));
   </script>
 
-    <!-- KHUNG CHATBOX ẨN (Nằm ở góc phải màn hình) -->
+  <!-- KHUNG CHATBOX ẨN (Nằm ở góc phải màn hình) -->
 <div id="sean-chatbox" class="chatbox-wrapper">
   <!-- Phần Header màu xanh đậm -->
   <div class="chatbox-header">
     <div class="bot-info">
       <!-- Thay đường dẫn ảnh avatar của bạn vào đây -->
-      <img src="assets/chatbox.jpg" alt="Thúi Heo" class="bot-avatar" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'><circle cx=\'20\' cy=\'20\' r=\'20\' fill=\'white\'/></svg>'">
+      <img src="../assets/chatbox.jpg" alt="Thúi Heo" class="bot-avatar" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'><circle cx=\'20\' cy=\'20\' r=\'20\' fill=\'white\'/></svg>'">
       <div>
         <h4>Hana</h4>
         <p>Ask me a question</p>
@@ -251,5 +241,63 @@
     });
   }
 </script>
+
+<!-- 1. GỌI THƯ VIỆN PDF.JS TỪ MÁY CHỦ QUỐC TẾ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  
+  <!-- 2. SCRIPT XỬ LÝ VÀ VẼ LẠI PDF SIÊU NÉT -->
+  <script>
+    // Chỉ định đường dẫn tới worker của thư viện (Bắt buộc để chạy mượt)
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+    // ĐƯỜNG DẪN FILE PDF CỦA BẠN (Kiểm tra kỹ lại đường dẫn này)
+    const pdfUrl = '../assets/A.pdf'; 
+    
+    const container = document.getElementById('pdf-render-container');
+    const loadingDiv = document.getElementById('pdf-loading');
+
+    // Scale = 1.5 giúp phóng to bản gốc trước khi vẽ để lấy tối đa chi tiết
+    const scale = 1.5;
+
+    // Tiến hành tải file PDF
+    pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
+      loadingDiv.style.display = 'none'; // Tắt chữ loading khi đã tải xong
+      
+      // Vòng lặp: Lấy từng trang một từ trang 1 đến trang cuối cùng
+      for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+        pdf.getPage(pageNum).then(page => {
+          const viewport = page.getViewport({ scale: scale });
+          
+          // Tạo một thẻ <canvas> (khung vẽ đồ họa) cho trang này
+          const canvas = document.createElement('canvas');
+          const context = canvas.getContext('2d');
+          
+          // BÍ QUYẾT LÀM NÉT: Nhân đôi số lượng pixel nếu người dùng xài màn hình Retina (Macbook, iPhone)
+          const outputScale = window.devicePixelRatio || 1;
+          
+          // Kích thước thật chứa cực nhiều Pixel để không bị vỡ nét
+          canvas.width = Math.floor(viewport.width * outputScale);
+          canvas.height = Math.floor(viewport.height * outputScale);
+          
+          // Gắn class CSS để nó co bóp responsive vừa vặn với giao diện
+          canvas.classList.add('pdf-page-canvas');
+          
+          // Nhét trang giấy vào khung hiển thị
+          container.appendChild(canvas);
+
+          // Lệnh bắt đầu "Vẽ" nội dung PDF lên canvas với chất lượng cao nhất
+          const renderContext = {
+            canvasContext: context,
+            transform: [outputScale, 0, 0, outputScale, 0, 0],
+            viewport: viewport
+          };
+          page.render(renderContext);
+        });
+      }
+    }).catch(error => {
+      console.error('Lỗi khi tải trang PDF: ', error);
+      loadingDiv.innerText = 'Không thể tải được file PDF. Vui lòng kiểm tra lại đường dẫn.';
+    });
+  </script>
 </body>
 </html>
