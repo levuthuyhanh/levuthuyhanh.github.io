@@ -6,6 +6,7 @@
   font-style: normal;
   font-weight: 400 900; 
   src: url('fonts/A.ttf') format('truetype');
+  font-display: block;
 }
 
 @font-face {
@@ -13,6 +14,7 @@
   font-style: normal;
   font-weight: 400;
   src: url('fonts/B.ttf') format('truetype');
+  font-display: block;
 }
 
 :root {
@@ -30,6 +32,7 @@
 
 html {
   font-size: 14px; 
+  overflow-y: scroll;
 }
 
 * {
@@ -130,7 +133,7 @@ article,
 .play-hero h1, .play-hero p, .play-card,
 .notes-hero h1, .notes-hero p, .note-item {
   opacity: 0; 
-  animation: slideUpFade 1.5s cubic-bezier(0.1, 1, 0.2, 1) forwards;
+  animation: slideUpFade 1.5s cubic-bezier(0.1, 1, 0.2, 1) both;
 }
 
 /* 2. Cài đặt độ trễ cho TRANG CHỦ (Từng nhịp một) */
@@ -187,7 +190,7 @@ article,
   background-color: transparent; 
   padding: 6px 8px;
   border-radius: 50px;
-  transition: all 0.3s ease; 
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease; 
 }
 
 .sean-nav-pill.scrolled {
@@ -206,6 +209,7 @@ article,
   display: flex;
   align-items: center;
   gap: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .sean-nav-pill .nav-item:hover:not(.active) {
@@ -455,44 +459,43 @@ article,
   .sparkle { display: none; }
 }
 /* =========================================
-   5. TRANG EPIC (ABOUT PAGE - SEAN HALPIN STYLE)
+   5. TRANG EPIC (ABOUT PAGE - BỐ CỤC CHUẨN, SIZE VỪA VẶN)
 ========================================= */
-/* 1. Tiêu đề siêu to */
 .about-intro {
   text-align: center;
-  padding: 140px 20px 100px;
+  padding: 120px 20px 80px; 
 }
 
-.giant-heading {
-  font-size: 9rem; /* Chữ siêu to */
-  font-weight: 900;
-  letter-spacing: -4px;
+.about-intro .giant-heading {
+  /* Rút từ 14rem xuống 9.5rem: Đủ to để gây ấn tượng nhưng không phá vỡ khung hình */
+  font-size: 9.5rem; 
+  letter-spacing: -4px; 
   line-height: 1;
-  color: var(--text-dark);
 }
 
-/* 2. Ảnh cổng vòm và Text */
 .about-profile {
-  padding: 0 20px 250px;
-  max-width: 1000px; /* Thu hẹp lại để giống tỷ lệ ảnh gốc */
+  padding: 0 0px 250px;
+  /* Thu khung chứa lại mức 1050px (To hơn bản gốc 1000px một chút để có chỗ cho ảnh) */
+  max-width: 1200px; 
   margin: 0 auto;
 }
 
 .profile-grid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr; /* Cột phải to hơn cột trái */
-  gap: 120px;
+  /* Tỷ lệ 1.1fr : 1.5fr giúp ảnh to hơn bản cũ một xíu, nhưng không lấn át phần chữ */
+  grid-template-columns: 1.1fr 1.5fr; 
+  gap: 120px; /* Cân chỉnh lại khoảng trống cho vừa vặn */
   align-items: center;
 }
 
-/* Cắt ảnh thành hình cổng vòm (Arch) */
 .profile-arch {
   width: 100%;
-  aspect-ratio: 1 / 1.1; /* Tỷ lệ hơi cao hơn vuông */
-  background-color: #d8c3b1; /* Màu nền dự phòng nếu ảnh lỗi */
-  border-top-left-radius: 200px; /* Bo tròn hoàn toàn 2 góc trên */
+  /* Trả lại dáng vòm hơi cao (1 / 1.1) thay vì vuông vức */
+  aspect-ratio: 1 / 1.1; 
+  background-color: #d8c3b1; 
+  border-top-left-radius: 200px; 
   border-top-right-radius: 200px;
-  border-bottom-left-radius: 20px; /* Dưới bo ít */
+  border-bottom-left-radius: 20px; 
   border-bottom-right-radius: 20px;
   overflow: hidden;
 }
@@ -504,19 +507,20 @@ article,
 }
 
 .profile-text h2 {
-  font-size: 3rem;
+  /* Trả về 2.6rem để đoạn văn bản giữ được sự tinh tế, kết hợp ép sát dòng */
+  font-size: 2.6rem; 
   font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 35px;
+  line-height: 1.1; 
+  margin-bottom: 30px;
   letter-spacing: -1px;
 }
 
 .profile-text p {
   font-size: 1.15rem;
-  color: #556b62; /* Màu chữ nhạt hơn tí */
+  color: #556b62; 
   margin-bottom: 25px;
   font-weight: 500;
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
 /* 3. Khối 4 Giá trị cốt lõi */
@@ -1075,6 +1079,11 @@ article,
   visibility: hidden;
   transform: translateY(20px);
   transition: all 0.4s cubic-bezier(0.1, 1, 0.2, 1);
+
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px); /* Phải có dòng này để chạy mượt trên Safari/iPhone */
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 /* Lớp class được thêm vào bằng JavaScript để kích hoạt hiện ra */

@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hanh portfolio</title>
-  <link rel="preload" href="fonts/ten-font.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="fonts/A.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="fonts/B.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="style.css"> 
 </head>
 <body id="top">
@@ -284,22 +285,43 @@
   const chatbox = document.getElementById('sean-chatbox');
   const closeBtn = document.getElementById('close-chat');
 
-  // Lắng nghe sự kiện click vào nút Contact
-  contactBtn.addEventListener('click', function(e) {
-    e.preventDefault(); 
+  // 1. KIỂM TRA BỘ NHỚ NGAY KHI VỪA TẢI TRANG
+  if (localStorage.getItem('seanChatState') === 'open') {
+    // BÍ QUYẾT: Tạm thời vô hiệu hóa hiệu ứng trượt của CSS
+    chatbox.style.transition = 'none'; 
     
-    // LỆNH TOGGLE: Tự động đảo ngược trạng thái mỗi lần bấm
-    chatbox.classList.toggle('active'); 
-    
-    // Đồng thời gắn thêm 1 class vào chính nút Contact để lát nữa ta CSS cái vòng sáng
-    contactBtn.classList.toggle('contact-active');
-  });
+    chatbox.classList.add('active');
+    if(contactBtn) contactBtn.classList.add('contact-active');
 
-  // Khi bấm vào dấu X, phải tắt cả chatbox lẫn vòng sáng ở nút Contact
-  closeBtn.addEventListener('click', function() {
-    chatbox.classList.remove('active'); 
-    contactBtn.classList.remove('contact-active');
-  });
+    // Sau 10 mili-giây, trả lại hiệu ứng trượt bình thường để lúc bấm tắt nó vẫn mượt
+    setTimeout(function() {
+      chatbox.style.transition = '';
+    }, 10);
+  }
+
+  // 2. XỬ LÝ KHI BẤM NÚT CONTACT
+  if (contactBtn) {
+    contactBtn.addEventListener('click', function(e) {
+      e.preventDefault(); 
+      chatbox.classList.toggle('active'); 
+      contactBtn.classList.toggle('contact-active');
+      
+      if (chatbox.classList.contains('active')) {
+        localStorage.setItem('seanChatState', 'open'); 
+      } else {
+        localStorage.setItem('seanChatState', 'closed'); 
+      }
+    });
+  }
+
+  // 3. XỬ LÝ KHI BẤM NÚT TẮT (DẤU X)
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function() {
+      chatbox.classList.remove('active'); 
+      if(contactBtn) contactBtn.classList.remove('contact-active');
+      localStorage.setItem('seanChatState', 'closed'); 
+    });
+  }
 </script>
 </body>
 </html>
