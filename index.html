@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hanh portfolio</title>
+  <link rel="preload" href="fonts/A.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="fonts/B.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="icon" href="assets/favicon.png?v=2" type="image/png">
+  <link rel="stylesheet" href="style.css"> 
+</head>
+<body id="top">
+  
+  
+
+  <!-- THANH ĐIỀU KHIỂN NỔI (FLOATING NAV) -->
+<header class="floating-header">
+  <nav class="sean-nav-pill" aria-label="Điều hướng chính">
+    <a href="index.html" class="nav-item active">WORK <span class="slash">/</span></a>
+    <a href="about.html" class="nav-item">ABOUT</a>
+    
+    <a href="play.html" class="nav-item">PLAY</a>
+    
+    <a href="note.html" class="nav-item">NOTE</a>
+    <a href="#" id="open-contact" class="nav-item">CONTACT</a>
+  </nav>
+</header>
+
+  <main>
+    <!-- PHẦN 1: HERO SECTION (CHỮ XANH KHỔNG LỒ) -->
+    <section class="sean-hero">
+      <div class="hero-text-wrapper">
+        <!-- Ngôi sao trái -->
+        <svg class="sparkle left" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 0C20 11.0457 11.0457 20 0 20C11.0457 20 20 28.9543 20 40C20 28.9543 28.9543 20 40 20C28.9543 20 20 11.0457 20 0Z" fill="white"/>
+        </svg>
+        
+        <h1 class="giant-heading">Hi. I'm Thuy Hanh.<br>A Designer.</h1>
+        
+        <!-- Ngôi sao phải -->
+        <svg class="sparkle right" width="50" height="50" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 0C20 11.0457 11.0457 20 0 20C11.0457 20 20 28.9543 20 40C20 28.9543 28.9543 20 40 20C28.9543 20 20 11.0457 20 0Z" fill="white"/>
+        </svg>
+      </div>
+      <p class="hero-subtitle">I'm passionate about crafting experiences that are engaging,<br>accessible, and user-centric.</p>
+    </section>
+
+    <!-- PHẦN 2: LƯỚI 4 Ô TƯƠNG TÁC (WORK CARDS) -->
+    <section class="work-section">
+      <div class="work-grid">
+        <!-- Ô Tím: AI -->
+        <a href="work/project.html" class="work-card card-purple">
+          <div class="card-floaters">
+            <svg class="floater f-star-1" width="90" height="90" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 0C20 11.0457 11.0457 20 0 20C11.0457 20 20 28.9543 20 40C20 28.9543 28.9543 20 40 20C28.9543 20 20 11.0457 20 0Z" fill="white"/>
+            </svg>
+            <svg class="floater f-star-2" width="50" height="50" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 0C20 11.0457 11.0457 20 0 20C11.0457 20 20 28.9543 20 40C20 28.9543 28.9543 20 40 20C28.9543 20 20 11.0457 20 0Z" fill="white"/>
+            </svg>
+            <svg class="floater f-star-3" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 0C20 11.0457 11.0457 20 0 20C11.0457 20 20 28.9543 20 40C20 28.9543 28.9543 20 40 20C28.9543 20 20 11.0457 20 0Z" fill="white"/>
+            </svg>
+          </div>
+
+          <div class="card-header">
+            <span class="brand">HELP SCOUT</span>
+            <h2>Typography Design & Mockup</h2>
+          </div>
+          <div class="card-image-placeholder"></div>
+        </a>
+        
+        <!-- Ô Xanh ngọc: Articles -->
+        <a href="work/process.html" class="work-card card-mint">
+          <!-- Hiệu ứng bay ra của Articles -->
+          <div class="card-floaters">
+            <!-- Icon Tài liệu -->
+            <svg class="floater f-doc" width="80" height="80" viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="20" y="15" width="60" height="70" rx="8" />
+              <path d="M35 35h30 M35 55h30 M35 75h15" />
+            </svg>
+            <!-- Icon Bút và Vòng tròn -->
+            <svg class="floater f-pen" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="6" stroke-linecap="round">
+              <path d="M80 30 A 35 35 0 1 0 50 85" />
+              <rect x="40" y="10" width="16" height="50" rx="8" transform="rotate(45 50 10)" />
+              <path d="M68 38 l -10 -10" />
+            </svg>
+          </div>
+
+          <div class="card-header">
+            <span class="brand">HELP SCOUT</span>
+            <h2>Print File Processing</h2>
+          </div>
+          <div class="card-image-placeholder"></div>
+        </a>
+
+        <!-- Ô Cam nhạt: Plugins -->
+        <a href="work/2D.html" class="work-card card-peach">
+          <!-- Hiệu ứng bay ra của Plugins -->
+          <div class="card-floaters">
+            <!-- Icon Lượn sóng -->
+            <svg class="floater f-squiggle" width="80" height="80" viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 70 Q 30 10, 50 50 T 90 30" />
+            </svg>
+            <!-- Icon Sao và Vòng xoáy -->
+            <svg class="floater f-swirl" width="90" height="90" viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="6" stroke-linecap="round">
+              <path d="M30 10 Q 40 40, 70 50 Q 40 60, 30 90 Q 20 60, -10 50 Q 20 40, 30 10 Z" fill="white" stroke="none"/>
+              <path d="M60 40 C 90 20, 100 70, 70 80 C 50 85, 40 60, 60 60" />
+            </svg>
+          </div>
+
+          <div class="card-header">
+            <span class="brand">FIGMA</span>
+            <h2>2D Hand Drawing</h2>
+          </div>
+          <div class="card-image-placeholder"></div>
+        </a>
+
+        <!-- Ô Xanh dương: Mobile -->
+        <a href="#" class="work-card card-blue">
+          <!-- Hiệu ứng bay ra của Mobile -->
+          <div class="card-floaters">
+            <!-- Icon Điện thoại -->
+            <svg class="floater f-phone" width="75" height="75" viewBox="0 0 100 100" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="25" y="10" width="50" height="80" rx="10" />
+              <rect x="35" y="25" width="30" height="35" rx="4" />
+              <path d="M40 75 h20" stroke-width="8"/>
+            </svg>
+          </div>
+
+          <div class="card-header">
+            <span class="brand">HELP SCOUT</span>
+            <h2>Mobile</h2>
+          </div>
+          <div class="card-image-placeholder"></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- PHẦN 3: IN PROGRESS -->
+    <section class="in-progress-section">
+      <div class="in-progress-header">
+        <h1 class="giant-heading">In Progress.</h1>
+        <p class="hero-subtitle">Work in various states of design and development, from side projects,<br>to in-flight product design and development.</p>
+      </div>
+      
+      <div class="work-grid">
+        <!-- Ô Trắng: Doodler -->
+        <a href="#" class="work-card card-white">
+          <div class="card-header">
+            <span class="brand">MULTIPLAYER</span>
+            <h2>Doodler</h2>
+          </div>
+          <div class="card-image-placeholder"></div>
+        </a>
+        
+        <!-- Ô Đen: Droplette -->
+        <a href="#" class="work-card card-black">
+          <div class="card-header light-text">
+            <span class="brand">FIGMA</span>
+            <h2>Droplette</h2>
+          </div>
+          <div class="card-image-placeholder"></div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-left">
+        <p>© 2026 Hana <span>•</span> Thỏa sức đam mê</p>
+      </div>
+      
+      <div class="footer-right">
+        <div class="footer-column">
+          <h4>Elsewhere</h4>
+          <a href="#">Figma</a>
+          <a href="#">Github</a>
+          <a href="#">Posts</a>
+          <a href="#">CV</a>
+          <a href="#">LinkedIn</a>
+        </div>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <a href="#">Message</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phần thanh thước kẻ và nút mặt trời -->
+    <div class="footer-bottom">
+      <div class="theme-toggle">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </div>
+      <div class="ruler">
+        <div class="tick minor"></div>
+        <div class="tick minor"></div>
+        <div class="tick minor"></div>
+        <div class="tick minor"></div>
+        <div class="tick minor"></div>
+        <div class="tick major"></div>
+        <div class="tick major"></div>
+        <div class="tick major"></div>
+        <div class="tick major"></div>
+        <div class="tick major"></div>
+        <div class="tick major"></div>
+        <div class="tick major"></div>
+        
+        <div class="tick center"></div>
+        
+        <div class="tick major"></div>
+        <div class="tick major"></div>
+        <div class="tick major"></div>
+        <div class="tick major"></div>
+        <div class="tick minor"></div>
+        <div class="tick minor"></div>
+        <div class="tick minor"></div>
+        <div class="tick minor"></div>
+        <div class="tick minor"></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BỘ NÃO JAVASCRIPT XỬ LÝ MENU CUỘN -->
+  <script>
+    // Lắng nghe hành động cuộn chuột của người dùng
+    window.addEventListener('scroll', function() {
+      // Tìm cái menu viên thuốc
+      const navPill = document.querySelector('.sean-nav-pill');
+      
+      // Nếu cuộn xuống quá 20px thì bật nền màu kem lên
+      if (window.scrollY > 20) {
+        navPill.classList.add('scrolled');
+      } 
+      // Nếu kéo ngược lại lên kịch trần thì tắt nền đi (trở về trong suốt)
+      else {
+        navPill.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+  <!-- KHUNG CHATBOX ẨN (Nằm ở góc phải màn hình) -->
+<div id="sean-chatbox" class="chatbox-wrapper">
+  <!-- Phần Header màu xanh đậm -->
+  <div class="chatbox-header">
+    <div class="bot-info">
+      <!-- Thay đường dẫn ảnh avatar của bạn vào đây -->
+      <img src="assets/chatbox.jpg" alt="Thúi Heo" class="bot-avatar" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'><circle cx=\'20\' cy=\'20\' r=\'20\' fill=\'white\'/></svg>'">
+      <div>
+        <h4>Hana</h4>
+        <p>Ask me a question</p>
+      </div>
+    </div>
+    <!-- Nút tắt (dấu X) -->
+    <button id="close-chat" class="close-chat-btn">&times;</button>
+  </div>
+
+  <!-- Phần Nội dung Chat -->
+  <div class="chatbox-body">
+    <div class="chat-msg bot-msg">Hi!</div>
+    <div class="chat-msg bot-msg">I'm Hana. I'm here to help you with any questions you might have about my work.</div>
+    <div class="chat-msg bot-msg">How can I help you today?</div>
+    
+    <!-- Các nút tùy chọn -->
+    <div class="chat-options">
+      <a href="#" class="chat-option-btn">Looking for your old portfolio</a>
+      <a href="#" class="chat-option-btn">Just saying hello!</a>
+      <a href="#" class="chat-option-btn">Interested in mentorship</a>
+      <a href="#" class="chat-option-btn">We'd like to hire you</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const contactBtn = document.getElementById('open-contact');
+  const chatbox = document.getElementById('sean-chatbox');
+  const closeBtn = document.getElementById('close-chat');
+
+  // 1. KIỂM TRA BỘ NHỚ NGAY KHI VỪA TẢI TRANG
+  if (localStorage.getItem('seanChatState') === 'open') {
+    // BÍ QUYẾT: Tạm thời vô hiệu hóa hiệu ứng trượt của CSS
+    chatbox.style.transition = 'none'; 
+    
+    chatbox.classList.add('active');
+    if(contactBtn) contactBtn.classList.add('contact-active');
+
+    // Sau 10 mili-giây, trả lại hiệu ứng trượt bình thường để lúc bấm tắt nó vẫn mượt
+    setTimeout(function() {
+      chatbox.style.transition = '';
+    }, 10);
+  }
+
+  // 2. XỬ LÝ KHI BẤM NÚT CONTACT
+  if (contactBtn) {
+    contactBtn.addEventListener('click', function(e) {
+      e.preventDefault(); 
+      chatbox.classList.toggle('active'); 
+      contactBtn.classList.toggle('contact-active');
+      
+      if (chatbox.classList.contains('active')) {
+        localStorage.setItem('seanChatState', 'open'); 
+      } else {
+        localStorage.setItem('seanChatState', 'closed'); 
+      }
+    });
+  }
+
+  // 3. XỬ LÝ KHI BẤM NÚT TẮT (DẤU X)
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function() {
+      chatbox.classList.remove('active'); 
+      if(contactBtn) contactBtn.classList.remove('contact-active');
+      localStorage.setItem('seanChatState', 'closed'); 
+    });
+  }
+</script>
+</body>
+</html>
