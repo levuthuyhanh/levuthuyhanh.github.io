@@ -130,7 +130,12 @@ a { text-decoration: none; color: inherit; }
 article,
 .about-intro, .profile-grid, .values-container .value-item,
 .play-hero h1, .play-hero p, .play-card,
-.notes-hero h1, .notes-hero p, .note-item {
+.notes-hero h1, .notes-hero p, .note-item,.project-hero .brand-label,
+.project-hero .giant-heading,
+.project-hero .hero-subtitle,
+.project-meta-container,
+.project-showcase,
+.project-content .text-block {
   opacity: 0; 
   animation: slideUpFade 1.5s cubic-bezier(0.1, 1, 0.2, 1) both;
 }
