@@ -1433,3 +1433,23 @@ article,
     bottom: 20px;        /* Hạ thấp xuống một chút cho gọn */
   }
 }
+/* =========================================
+   RESPONSIVE LƯỚI ẢNH ĐIỆN THOẠI (XẾP DỌC NỐI TIẾP NHAU)
+========================================= */
+@media (max-width: 768px) {
+  /* Ép tất cả các kiểu chia cột rã thành 1 cột dọc */
+  .quadro-gallery,
+  .trio-gallery,
+  .duo-gallery {
+    grid-template-columns: 1fr; 
+    gap: 20px; /* Thu hẹp khoảng cách giữa các tấm ảnh khi xếp dọc */
+    padding: 0 20px; /* Ép lề hai bên nhỏ lại để ảnh nở to ra hết cỡ */
+  }
+
+  /* Khung ảnh hero 1 tấm cũng ép lề nhỏ lại để ảnh to ra */
+  .mono-gallery,
+  .project-showcase {
+    padding: 0 20px;
+    margin-bottom: 60px;
+  }
+}
