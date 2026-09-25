@@ -50,13 +50,15 @@
     </section>
 
     <!-- PHẦN 3: ẢNH BÌA HERO SIÊU TO -->
-    <section class="project-showcase">
-      <!-- Đổi class thành pdf-container để CSS nhận diện -->
-      <div class="showcase-image pdf-container">
-        <!-- Đường dẫn trực tiếp đến file PDF trong thư mục assets -->
-        <iframe src="../assets/A.pdf#toolbar=0&navpanes=0" width="100%" height="100%" frameborder="0"></iframe>
-      </div>
-    </section>
+    <!-- Bọc iframe bằng Google Docs Viewer để chống lỗi trên iPhone -->
+<section class="project-showcase">
+  <div class="showcase-image pdf-container">
+    
+      <!-- Mượn Google Viewer để hiển thị. Lưu ý: Phải dùng link web thật có chữ https:// -->
+      <iframe src="https://docs.google.com/viewer?url=https://levuthuyhanh.github.io/assets/A.pdf&embedded=true" width="100%" height="100%" frameborder="0"></iframe>
+    
+  </div>
+</section>
 
     <!-- PHẦN 4: NỘI DUNG KỂ CHUYỆN (TEXT & ẢNH NHỎ) -->
     <section class="project-content">

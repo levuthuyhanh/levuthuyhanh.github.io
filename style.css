@@ -436,33 +436,7 @@ article,
   color: #ffffff;
 }
 
-/* =========================================
-   RESPONSIVE (ĐIỆN THOẠI & IPAD)
-========================================= */
-@media (max-width: 992px) {
-  .giant-heading {
-    font-size: 5.5rem;
-  }
-  .sparkle.left { left: -40px; width: 30px; }
-  .sparkle.right { right: -40px; width: 40px; }
-  
-  .work-grid .work-card {
-    grid-column: span 12 !important; 
-  }
-  
-  .work-card {
-    height: 480px; 
-  }
-}
 
-@media (max-width: 768px) {
-  .giant-heading {
-    font-size: 4rem;
-    letter-spacing: -2px;
-  }
-  .sean-hero { padding: 120px 20px 60px; }
-  .sparkle { display: none; }
-}
 /* =========================================
    5. TRANG EPIC (ABOUT PAGE - BỐ CỤC CHUẨN, SIZE VỪA VẶN)
 ========================================= */
@@ -568,33 +542,6 @@ article,
   line-height: 1.7;
 }
 
-/* =========================================
-   RESPONSIVE (ĐIỆN THOẠI)
-========================================= */
-@media (max-width: 768px) {
-  .giant-heading {
-    font-size: 4rem;
-    letter-spacing: -2px;
-  }
-  
-  .profile-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  
-  .profile-arch {
-    max-width: 300px;
-    margin: 0 auto;
-  }
-  
-  .values-container {
-    padding: 40px 20px;
-  }
-  
-  .values-grid {
-    grid-template-columns: 1fr;
-  }
-}
 /* =========================================
    6. TRANG CHƯƠNG TRÌNH (PLAY PAGE)
 ========================================= */
@@ -746,14 +693,6 @@ article,
 .blue-icon { background-color: #1a365d; color: white; }
 .pink-icon { background-color: #fce4ec; color: #d81b60; }
 
-/* Responsive cho điện thoại */
-@media (max-width: 768px) {
-  .play-grid { grid-template-columns: 1fr; }
-  .card-row { flex-direction: column-reverse; text-align: left; align-items: flex-start; }
-  .card-icon { width: 80px; height: 80px; font-size: 2rem; }
-  .play-hero h1 { font-size: 4rem; }
-  .sparkle { font-size: 3rem; right: -30px; }
-}
 /* =========================================
    7. TRANG GIÁO VIÊN (NOTES PAGE CLONE)
 ========================================= */
@@ -836,13 +775,6 @@ article,
   color: #556b62;
   line-height: 1.6;
   font-weight: 500;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .notes-hero h1 { font-size: 4rem; }
-  .note-item { padding: 35px 30px; border-radius: 30px; }
-  .note-item h3 { font-size: 1.8rem; }
 }
 /* =========================================
    8. FOOTER 
@@ -963,20 +895,6 @@ article,
   background-color: #0e4e3b;
 }
 
-/* --- ĐÁP ỨNG TRÊN ĐIỆN THOẠI (RESPONSIVE) --- */
-@media (max-width: 768px) {
-  .footer-top {
-    flex-direction: column;
-  }
-  
-  .footer-right {
-    gap: 60px;
-  }
-  
-  .site-footer {
-    padding: 60px 20px 40px;
-  }
-}
 /* =========================================
    HIỆU ỨNG CÁC BIỂU TƯỢNG XUẤT HIỆN TỪ RÌA (KHÔNG ĐỔI KÍCH THƯỚC)
 ========================================= */
@@ -1313,14 +1231,6 @@ article,
   font-weight: 500;
 }
 
-/* Responsive cho Mobile */
-@media (max-width: 768px) {
-  .project-meta { 
-    flex-direction: column; 
-    gap: 40px; 
-    padding: 20px; 
-  }
-}
 /* =========================================
    GIAO DIỆN NHÚNG PDF TRỰC TIẾP (IFRAME)
 ========================================= */
@@ -1343,23 +1253,6 @@ article,
   width: 100%;
   height: 100%;
   display: block;
-}
-
-/* Responsive cho điện thoại (thu nhỏ chiều cao khung PDF lại) */
-@media (max-width: 768px) {
-  .pdf-container {
-    height: 60vh;
-    border-radius: 24px;
-  }
-  
-  .pdf-container iframe {
-    border-radius: 24px;
-    
-    /* Khóa chặt chiều ngang tuyệt đối 100%, cấm phình to */
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 100% !important;
-  }
 }
 
 /* Lưới 3 ảnh dọc đứng cạnh nhau */
@@ -1419,44 +1312,109 @@ article,
   margin: 0; /* Xóa margin thừa */
 }
 
-/* Responsive cho điện thoại (tự rã thành 1 cột dọc) */
-@media (max-width: 768px) {
-  .trio-gallery {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    padding: 0 20px;
+/* =========================================
+   1. MÀN HÌNH IPAD & MÁY TÍNH BẢNG (Dưới 992px)
+   LƯU Ý: Phải luôn đặt khung to lên trước
+========================================= */
+@media (max-width: 992px) {
+  .giant-heading {
+    font-size: 5.5rem;
+  }
+  .sparkle.left { left: -40px; width: 30px; }
+  .sparkle.right { right: -40px; width: 40px; }
+  
+  .work-grid .work-card {
+    grid-column: span 12 !important; 
+  }
+  
+  .work-card {
+    height: 480px; 
   }
 }
 
 /* =========================================
-   RESPONSIVE CHO CHATBOX ĐIỆN THOẠI (ÉP KÍCH THƯỚC)
+   2. MÀN HÌNH ĐIỆN THOẠI CHUNG (Dưới 768px)
 ========================================= */
 @media (max-width: 768px) {
+  /* Gộp các setting cho layout dọc */
+  .profile-grid, .values-grid, .play-grid, 
+  .trio-gallery, .duo-gallery {
+    grid-template-columns: 1fr;
+  }
+  .profile-grid { text-align: center; }
+  .profile-arch { max-width: 300px; margin: 0 auto; }
+  .card-row { flex-direction: column-reverse; text-align: left; align-items: flex-start; }
+  .card-icon { width: 80px; height: 80px; font-size: 2rem; }
+  
+  .values-container { padding: 40px 20px; }
+  .footer-top { flex-direction: column; }
+  .footer-right { gap: 60px; }
+  .site-footer { padding: 60px 20px 40px; }
+  
+  .sean-hero { padding: 120px 20px 60px; }
+  .sparkle { display: none; }
+
+  /* Gallery */
+  .trio-gallery, .duo-gallery, .quadro-gallery {
+    gap: 20px !important;
+    padding: 0 15px !important;
+  }
+  .quadro-gallery { grid-template-columns: repeat(2, 1fr) !important; }
+  .mono-gallery, .project-showcase { padding: 0 15px !important; margin-bottom: 60px !important; }
+
+  /* Chatbox & PDF */
   .chatbox-wrapper {
-    /* Ép chiều ngang đúng bằng 100% màn hình trừ đi 40px lề hai bên */
-    width: calc(100% - 40px) !important; 
-    left: 20px !important;
-    right: auto !important; /* Gỡ bỏ lề phải để tránh xung đột */
+    width: 280px !important; 
+    right: 20px !important;
+    left: auto !important; 
     bottom: 20px !important;
   }
-}
-/* =========================================
-   RESPONSIVE LƯỚI ẢNH ĐIỆN THOẠI (XẾP DỌC NỐI TIẾP NHAU)
-========================================= */
-@media (max-width: 768px) {
-  /* Ép tất cả các kiểu chia cột rã thành 1 cột dọc */
-  .quadro-gallery,
-  .trio-gallery,
-  .duo-gallery {
-    grid-template-columns: 2fr; 
-    gap: 20px; /* Thu hẹp khoảng cách giữa các tấm ảnh khi xếp dọc */
-    padding: 0 20px; /* Ép lề hai bên nhỏ lại để ảnh nở to ra hết cỡ */
+  .chat-msg { font-size: 0.85rem !important; padding: 8px 12px !important; }
+  .pdf-container { height: 60vh; border-radius: 24px; width: 100% !important; overflow: hidden !important; }
+  .pdf-container iframe { border-radius: 24px; width: 1px !important; min-width: 100% !important; max-width: 100% !important; }
+  .project-meta { flex-direction: column; gap: 40px; padding: 20px; }
+  .work-grid {
+    display: flex !important;
+    flex-direction: column !important; /* Xếp dọc các thẻ bài từ trên xuống dưới */
+    gap: 30px !important; /* Thu hẹp khoảng cách giữa các thẻ bài còn 30px */
   }
 
-  /* Khung ảnh hero 1 tấm cũng ép lề nhỏ lại để ảnh to ra */
-  .mono-gallery,
-  .project-showcase {
-    padding: 0 20px;
-    margin-bottom: 60px;
+  .work-grid .work-card {
+    width: 100% !important; /* Ép thẻ bài vừa khít 100% chiều ngang màn hình */
   }
 }
+
+/* =========================================
+   3. MÀN HÌNH ĐIỆN THOẠI NHỎ (Dưới 480px - Cứu tinh cho màn 300-400px)
+========================================= */
+@media (max-width: 480px) {
+  /* Ép chữ tiêu đề nhỏ lại để không đâm lủng 2 bên mép điện thoại */
+  .giant-heading, .play-hero h1, .notes-hero h1 {
+    font-size: 2.8rem !important; 
+    letter-spacing: -1px !important;
+    word-break: break-word; /* Tự động bẻ chữ nếu từ tiếng Anh quá dài */
+  }
+
+  /* Thu gọn thẻ bài (Work Cards) */
+  .work-section {
+    padding: 0 15px 60px !important; 
+  }
+  .work-card {
+    height: 380px !important; /* Giảm chiều cao để lướt mượt hơn */
+    padding: 20px 15px !important; 
+    overflow: hidden !important; 
+  }
+  .card-header h2 {
+    font-size: 1.4rem !important; 
+    line-height: 1.15 !important;
+    word-wrap: break-word !important; 
+  }
+  .card-header .brand {
+    font-size: 0.7rem !important;
+  }
+  
+  /* Thu gọn Note items */
+  .note-item { padding: 25px 20px !important; border-radius: 24px !important; }
+  .note-item h3 { font-size: 1.5rem !important; }
+}
+
