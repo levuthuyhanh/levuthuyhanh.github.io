@@ -345,6 +345,16 @@ article,
   gap: 60px; 
 }
 
+.artwork-mask {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: 48px; /* Bo góc giống y hệt thẻ bài */
+  overflow: hidden; /* Cắt gọt mọi thứ chui ra khỏi mặt nạ này */
+  z-index: 1; 
+  pointer-events: none; /* Tránh cản trở click chuột của người dùng */
+}
+
 .work-card {
   display: block;
   border-radius: 48px; 
@@ -962,19 +972,19 @@ article,
   z-index: 1; 
 }
 
-.card-image-placeholder::after {
-  content: "";
+.card-svg-artwork {
   position: absolute;
-  bottom: 0; /* Bám sát đáy */
+  bottom: -5px; /* Ép sát đáy */
   left: 10%;
   width: 80%;
   height: 55%;
-  background-color: #ffffff; /* Giả lập hình ảnh */
-  border-radius: 12px 12px 0 0;
-  box-shadow: 0 -10px 30px rgba(0,0,0,0.05); /* Bóng đổ hắt lên nhẹ */
-  
-  /* Cài đặt thời gian kéo xuống mượt mà */
+  z-index: 1;
   transition: transform 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Hiệu ứng kéo tụt ảnh xuống khi Hover thẻ bài */
+.work-card:hover .card-svg-artwork {
+  transform: translateY(40px);
 }
 
 /* KHI RÊ CHUỘT: Kéo hình ảnh tụt xuống dưới */
