@@ -135,7 +135,8 @@ article,
 .project-hero .hero-subtitle,
 .project-meta-container,
 .project-showcase,
-.project-content .text-block {
+.project-content .text-block,
+.quadro-gallery, .duo-gallery, .trio-gallery, .mono-gallery {
   opacity: 0; 
   animation: slideUpFade 1.5s cubic-bezier(0.1, 1, 0.2, 1) both;
 }
