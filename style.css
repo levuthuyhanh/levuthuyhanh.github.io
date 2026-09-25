@@ -1028,9 +1028,9 @@ article,
 
 /* --- 3. Ô XANH DƯƠNG (MOBILE) --- */
 /* Điện thoại ở góc trên trái */
-.card-blue .f-phone { top: -60px; left: -30px; transform: translate(10px, 10px) rotate(-20deg); }
+.card-blue .f-image { top: -60px; left: -30px; transform: translate(10px, 10px) rotate(-20deg); }
 
-.card-blue:hover .f-phone { opacity: 1; transform: translate(0, 0) rotate(-20deg); transition-delay: 0.1s; }
+.card-blue:hover .f-image { opacity: 1; transform: translate(0, 0) rotate(-20deg); transition-delay: 0.1s; }
 
 /* Khung chứa ảnh nằm ở đáy thẻ */
 .card-image-placeholder {
@@ -1321,59 +1321,38 @@ article,
   }
 }
 /* =========================================
-   GIAO DIỆN TRÌNH ĐỌC PDF TỰ VIẾT (PDF.JS)
+   GIAO DIỆN NHÚNG PDF TRỰC TIẾP (IFRAME)
 ========================================= */
-.custom-pdf-viewer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #dcdcdc; /* Nền xám nhạt làm nổi bật trang giấy trắng */
-  padding: 40px 0;
-  
-  /* Cài đặt chiều cao và bật thanh cuộn dọc */
+.pdf-container {
   width: 100%;
-  height: 85vh; 
-  overflow-y: auto; 
-  overflow-x: hidden;
+  height: 85vh; /* Chiếm 85% chiều cao màn hình để người xem thấy trọn vẹn */
   border-radius: 48px;
-  box-shadow: inset 0 10px 30px rgba(0,0,0,0.05);
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  background-color: #e5e5e5; /* Màu nền xám nhạt lót phía dưới PDF */
+  
+  /* Mặt nạ cắt gọt mọi thứ lòi ra ngoài viền bo tròn */
   -webkit-mask-image: linear-gradient(white, white);
   mask-image: linear-gradient(white, white);
 }
 
-.pdf-page-canvas {
-  width: 85%; /* Độ rộng trang tạp chí bên trong khung */
-  height: auto !important; /* Tự động co giãn theo tỷ lệ */
-  margin-bottom: 30px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.15); /* Bóng đổ cho từng trang giấy */
-  border-radius: 4px;
+.pdf-container iframe {
+  border: none;
+  border-radius: 48px;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
-/* Trang cuối cùng không cần khoảng trống bên dưới */
-.pdf-page-canvas:last-child {
-  margin-bottom: 0;
-}
-
-/* Làm đẹp thanh cuộn dọc bên trong khung PDF */
-.custom-pdf-viewer::-webkit-scrollbar {
-  width: 10px;
-}
-.custom-pdf-viewer::-webkit-scrollbar-track {
-  background: transparent; 
-}
-.custom-pdf-viewer::-webkit-scrollbar-thumb {
-  background: #0c5140; /* Thanh cuộn màu xanh lá đậm */
-  border-radius: 10px;
-}
-.custom-pdf-viewer::-webkit-scrollbar-thumb:hover {
-  background: #0a3d30; 
-}
-
-#pdf-loading {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #0c5140;
-  margin-top: 50px;
+/* Responsive cho điện thoại (thu nhỏ chiều cao khung PDF lại) */
+@media (max-width: 768px) {
+  .pdf-container {
+    height: 60vh;
+    border-radius: 24px;
+  }
+  .pdf-container iframe {
+    border-radius: 24px;
+  }
 }
 
 /* Lưới 3 ảnh dọc đứng cạnh nhau */
@@ -1388,6 +1367,47 @@ article,
 
 /* Ép các khối ảnh trong lưới này phải cao bằng nhau */
 .quadro-gallery .showcase-image {
+  height: 100%; 
+  margin: 0; /* Xóa margin thừa */
+}
+
+.trio-gallery {
+  max-width: 1400px; /* Bằng với khung project-showcase của ảnh ngang */
+  margin: 0 auto 100px;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Chia đúng 3 cột bằng nhau */
+  gap: 40px; /* Khoảng cách giữa 3 ảnh */
+}
+
+/* Ép các khối ảnh trong lưới này phải cao bằng nhau */
+.trio-gallery .showcase-image {
+  height: 100%; 
+  margin: 0; /* Xóa margin thừa */
+}
+
+.duo-gallery {
+  max-width: 1400px; /* Bằng với khung project-showcase của ảnh ngang */
+  margin: 0 auto 100px;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Chia đúng 3 cột bằng nhau */
+  gap: 40px; /* Khoảng cách giữa 3 ảnh */
+}
+
+/* Ép các khối ảnh trong lưới này phải cao bằng nhau */
+.duo-gallery .showcase-image {
+  height: 100%; 
+  margin: 0; /* Xóa margin thừa */
+}
+
+.mono-gallery {
+  max-width: 1400px; /* Bằng với khung project-showcase của ảnh ngang */
+  margin: 0 auto 100px;
+}
+
+/* Ép các khối ảnh trong lưới này phải cao bằng nhau */
+.mono-gallery .showcase-image {
   height: 100%; 
   margin: 0; /* Xóa margin thừa */
 }
