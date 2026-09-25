@@ -1421,3 +1421,15 @@ article,
     padding: 0 20px;
   }
 }
+
+/* =========================================
+   RESPONSIVE CHO CHATBOX TRÊN ĐIỆN THOẠI
+========================================= */
+@media (max-width: 768px) {
+  .chatbox-wrapper {
+    width: auto;         /* Gỡ bỏ chiều ngang cố định 350px */
+    left: 20px;          /* Cách mép trái 20px */
+    right: 20px;         /* Cách mép phải 20px */
+    bottom: 20px;        /* Hạ thấp xuống một chút cho gọn */
+  }
+}
