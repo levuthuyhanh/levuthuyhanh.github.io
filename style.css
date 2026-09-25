@@ -1351,8 +1351,14 @@ article,
     height: 60vh;
     border-radius: 24px;
   }
+  
   .pdf-container iframe {
     border-radius: 24px;
+    
+    /* Khóa chặt chiều ngang tuyệt đối 100%, cấm phình to */
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
   }
 }
 
@@ -1423,14 +1429,15 @@ article,
 }
 
 /* =========================================
-   RESPONSIVE CHO CHATBOX TRÊN ĐIỆN THOẠI
+   RESPONSIVE CHO CHATBOX ĐIỆN THOẠI (ÉP KÍCH THƯỚC)
 ========================================= */
 @media (max-width: 768px) {
   .chatbox-wrapper {
-    width: auto;         /* Gỡ bỏ chiều ngang cố định 350px */
-    left: 20px;          /* Cách mép trái 20px */
-    right: 20px;         /* Cách mép phải 20px */
-    bottom: 20px;        /* Hạ thấp xuống một chút cho gọn */
+    /* Ép chiều ngang đúng bằng 100% màn hình trừ đi 40px lề hai bên */
+    width: calc(100% - 40px) !important; 
+    left: 20px !important;
+    right: auto !important; /* Gỡ bỏ lề phải để tránh xung đột */
+    bottom: 20px !important;
   }
 }
 /* =========================================
@@ -1441,7 +1448,7 @@ article,
   .quadro-gallery,
   .trio-gallery,
   .duo-gallery {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 2fr; 
     gap: 20px; /* Thu hẹp khoảng cách giữa các tấm ảnh khi xếp dọc */
     padding: 0 20px; /* Ép lề hai bên nhỏ lại để ảnh nở to ra hết cỡ */
   }
